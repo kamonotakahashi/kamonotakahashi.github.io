@@ -6,5 +6,6 @@
 *.exe
 .env
 .bash_*
+*.map
 
 package-lock.json

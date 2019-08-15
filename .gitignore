@@ -1,0 +1,12 @@
+#mac
+.DS_Store
+
+#common
+*.log
+*.exe
+.env
+.bash_*
+
+node_modules/
+
+package-lock.json

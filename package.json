@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "node server.js",
     "w": "webpack --watch --mode development",
     "s": "webpack-dev-server --watch --inline --mode development"
   },
@@ -8,5 +8,8 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

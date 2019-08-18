@@ -6,7 +6,8 @@
 export default {
   data: function() {
     return {
-      message: 'hello'
+      message: 'helloa',
+      test: "Ab",
     }
   },
   computed: {

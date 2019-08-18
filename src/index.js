@@ -2,8 +2,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import { myTestMethod } from './test.js';
+
 //components
 import Header from './header.vue';
+
+myTestMethod();
 
 //css
 //import 'bootstrap';

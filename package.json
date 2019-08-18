@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
+    "build": "npx webpack",
     "w": "webpack --watch --mode development",
     "s": "webpack-dev-server --watch --inline --mode development --open"
   },

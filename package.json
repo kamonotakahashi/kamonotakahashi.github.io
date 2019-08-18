@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node server.js",
     "w": "webpack --watch --mode development",
-    "s": "webpack-dev-server --watch --inline --mode development"
+    "s": "webpack-dev-server --watch --inline --mode development --open"
   },
   "devDependencies": {
     "webpack": "^4.39.2",
@@ -10,6 +10,14 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "css-loader": "^3.2.0",
+    "express": "^4.17.1",
+    "style-loader": "^1.0.0",
+    "vue": "^2.1.4",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "vueify": "^9.3.0",
+    "vuex": "^2.0.0"
   }
 }

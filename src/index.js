@@ -12,6 +12,7 @@ import "bootstrap";
 import "./sass/index.scss";
 
 //firebase
+import firebase from "firebase";
 import { firebaseConfig } from './js/firebase';
 
 let fb = firebase.initializeApp(firebaseConfig);

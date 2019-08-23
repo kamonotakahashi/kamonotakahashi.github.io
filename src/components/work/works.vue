@@ -1,35 +1,34 @@
 <template>
     <div id="works">
+        <div class="card col-15" style="width: 18rem;" v-for="value in worklist">
+        <a v-bind:href="value.url">
+            <img class="card-img-top" v-bind:src="value.image" style="height:15rem;">
+        </a>
+            <div class="card-body">
 
-        <li v-for="value in object">
-            <li v-for="val in value">
-                {{ val }}
-            </li>
-        </li>
-
-        <div class="card col-10" style="width: 18rem;">
-
-          <div class="card-body">
-            <h5 class="card-title">a</h5>
-            <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。 カードのコンテンツ カードのコンテンツ</p>
-            <a href="#" class="btn btn-primary">ボタン</a>
-          </div>
+            <h6 class="card-title">{{ value.title }}</h6>
+            <p class="card-text">
+                {{ value.body }}
+            </p>
+            <a href="#" class="btn btn-info">詳細表示</a>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import Vue from "vue";
+import {firebaseDatabase} from '../../index'
 export default {
   name: 'Works',
   data () {
       return {
-          object : {
-              level1 : {
-                  test : "A"
-              }
-          }
+          worklist : [],
       }
+  },
+  mounted() {
+      firebaseDatabase.ref('data/works').on('value', (res) => {
+          this.worklist = res.val();
+      })
   }
 }
 </script>

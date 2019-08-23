@@ -56,6 +56,7 @@ module.exports = {
         host: "127.0.0.1",
         port: 8080,
         open: true,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.js', '.vue'],

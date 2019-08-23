@@ -4,6 +4,7 @@ import Router from 'vue-router';
 
 import IndexPageComponent from '../components/index';
 import JobsPageComponent from '../components/job_career';
+import SkillsPageComponent from '../components/skills';
 
 Vue.use(Router);
 Vue.use(Router);
@@ -20,6 +21,11 @@ export default new Router({
       path: '/jobs',
       name: 'job_carrer',
       component: JobsPageComponent
+    },
+    {
+      path: '/skills',
+      name: 'skills',
+      component: SkillsPageComponent
     },
   ]
 });

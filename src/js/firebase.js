@@ -1,3 +1,4 @@
+//ReadOnlyのため公開するよ〜
 export const firebaseConfig = {
       apiKey: "AIzaSyBUYu5-fhSfO2zYH8vP2owGIkHiHKs2fOk",
       authDomain: "kanohashi-portfolio.firebaseapp.com",

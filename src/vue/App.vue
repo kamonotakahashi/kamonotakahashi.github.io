@@ -15,6 +15,9 @@
                 <router-link to="/" class="nav-link text-light">Index</router-link>
             </li>
             <li class="nav-item pl-2 pr-2">
+                <router-link to="/skills" class="nav-link text-light">Skills</router-link>
+            </li>
+            <li class="nav-item pl-2 pr-2">
                 <router-link to="/jobs" class="nav-link text-light">Job Career</router-link>
             </li>
         </ul>
@@ -39,22 +42,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#header {
-  height: 40px;
-  background: white;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#header a {
-  text-decoration: none;
-  color: #2c3e50;
-  margin: 0 10px;
-  padding: 3px 10px;
-  background: #5ccebf;
 }
 </style>

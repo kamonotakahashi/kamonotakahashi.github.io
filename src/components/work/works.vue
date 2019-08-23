@@ -10,7 +10,7 @@
             <p class="card-text">
                 {{ value.body }}
             </p>
-            <a href="#" class="btn btn-info">詳細表示</a>
+            <a v-bind:href="value.url" class="btn btn-info">詳細表示</a>
             </div>
         </div>
     </div>

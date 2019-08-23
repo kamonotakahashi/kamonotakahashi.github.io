@@ -3,13 +3,7 @@
     padding: 0px;
 }
 
-.webtitle-text {
-    font-size: 15px;
-    color: white;
-}
-.scroll {
-  position: relative;
-  height: 260px;
-  padding: 10px;
-  overflow: auto;
+.title-color {
+    color: #ffd700;
+    font-weight: bold;
 }

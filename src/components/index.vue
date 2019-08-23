@@ -1,10 +1,18 @@
 <template>
-   <p>ここはトップページです。zzz</p>
+    <div class="row">
+        <WorkListsComponent></WorkListsComponent>
+
+
+    </div>
 </template>
 
 <script>
+import WorkListsComponent from "./work/works";
+export default {
+  components: { WorkListsComponent }
+};
 </script>
 
-<style>
+<style lang="sass">
 
 </style>

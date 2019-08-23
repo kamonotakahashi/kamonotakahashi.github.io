@@ -11,6 +11,12 @@ import router from './js/router';
 import "bootstrap";
 import "./sass/index.scss";
 
+//firebase
+import { firebaseConfig } from './js/firebase';
+
+let fb = firebase.initializeApp(firebaseConfig);
+export var firebaseDatabase = fb.database();
+
 new Vue({
   el: '#app',
   router,

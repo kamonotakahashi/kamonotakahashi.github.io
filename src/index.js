@@ -1,24 +1,19 @@
 //vue file import
-import Vue from 'vue';
-import Vuex from 'vuex';
-import VueRouter from 'vue-router';
+import Vue from 'vue'
 
 //components
-import Header from './header.vue';
-import Contents from "./contents.vue";
+import App from "./vue/App";
+
+//router
+import router from './js/router';
 
 //Bootstrap
 import "bootstrap";
-import "./index.scss";
-
-Vue.use(Vuex);
-Vue.use(VueRouter);
-Vue.config.productionTip = false;
+import "./sass/index.scss";
 
 new Vue({
   el: '#app',
-  components: {
-      "my-component-header" : Header,
-      "my-component-content" : Contents
-  },
-})
+  router,
+  components: { App },
+  template: '<App/>'
+});

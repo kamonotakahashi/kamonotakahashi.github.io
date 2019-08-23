@@ -33,6 +33,10 @@ module.exports = {
              loader: 'style-loader!css-loader',
              //loader: "style-loader"
          },
+         {
+             test: /\.(jpg|png|svg|gif)$/,
+             loaders: 'file-loader?name=[name].[ext]'
+         },
             {
               test: /\.scss$/,
               use: ExtractTextPlugin.extract({

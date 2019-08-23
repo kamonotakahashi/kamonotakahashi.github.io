@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light Sticky top bg-dark custom-hamburger">
+    <nav class="navbar navbar-expand-lg navbar-light Sticky top bg-dark">
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="change Navigator">
       <span class="navbar-toggler-icon"></span>
     </button>

@@ -7,7 +7,7 @@ module.exports = (env, argv) => {
     const IS_DEVELOPMENT = argv.mode === 'development';
     return {
         entry: `./src/index.js`,
-        mode: "development",
+        mode: IS_DEVELOPMENT ? "development" : "production",
         output: {
             path: path.resolve(__dirname, './dist/'),
             publicPath: "/",

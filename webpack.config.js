@@ -55,7 +55,10 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new ExtractTextPlugin('style.css'),
-            new VueLoaderPlugin()
+            new VueLoaderPlugin(),
+            new webpack.DefinePlugin({
+                "process.env.NODE_ENV" : JSON.stringify("production")
+            })
         ],
         devServer: {
             contentBase: path.join(__dirname, './dist/'),

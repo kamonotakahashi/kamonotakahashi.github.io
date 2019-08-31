@@ -7,7 +7,13 @@
         <li><router-link to="/" class="spa-link">Index</router-link></li>
         <li><router-link to="/" class="spa-link">test</router-link></li>
         <li><router-link to="/" class="spa-link">tet222</router-link></li>
+        <li><router-link to="/" class="spa-link">tet222</router-link></li>
     </ul>
+    <div class="burger">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+    </div>
 
 </nav>
 </template>

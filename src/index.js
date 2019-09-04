@@ -7,6 +7,10 @@ import App from "./vue/App";
 //router
 import router from './js/router';
 
+import $ from "jquery";
+
+import "./js/common";
+
 //Bootstrap
 //import "bootstrap";
 import "./sass/index.scss";

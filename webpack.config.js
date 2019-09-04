@@ -58,7 +58,11 @@ module.exports = (env, argv) => {
             new VueLoaderPlugin(),
             new webpack.DefinePlugin({
                 "process.env.NODE_ENV" : JSON.stringify("production")
-            })
+            }),
+            new webpack.ProvidePlugin({
+                  $: 'jquery',
+                  jQuery: 'jquery'
+                })
         ],
         devServer: {
             contentBase: path.join(__dirname, './dist/'),

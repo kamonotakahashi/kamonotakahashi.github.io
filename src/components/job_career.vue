@@ -1,5 +1,5 @@
 <template>
-    <div>adsdsds</div>
+    <div>bbbb</div>
 </template>
 
 <script>

@@ -20,6 +20,8 @@
         <li class="slider-spa-link" @click="mobileMenu"><router-link to="/jobs" class="link">Works</router-link></li>
         <li class="slider-spa-link" @click="mobileMenu"><router-link to="/" class="link">Contact</router-link></li>
     </ul>
+
+
 </nav>
 </template>
 
@@ -47,6 +49,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 </style>

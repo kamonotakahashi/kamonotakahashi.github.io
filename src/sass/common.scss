@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    background-color: #f8f8ff;
 }
 
 
@@ -11,9 +12,10 @@ nav{
     align-items: center;
     min-width: 8vh;
     height: 50px;
-    background: rgba(33,33,33,1);
+    background: rgb(33,33,33);
     font-family: 'Poppins', sans-serif;;
     box-shadow: 0 0 5px #999;
+    z-index: 1;
 }
 
 .logo {
@@ -23,18 +25,26 @@ nav{
     font-size: 18px;
     opacity: 1;
 }
+.logo h4 {
+    background: rgb(33,33,33);
+}
 
 .nav-links {
     display: flex;
     justify-content: space-around;
     width: 30%;
 }
+.nav-links {
+    background: rgb(33,33,33);
+}
 .nav-links li {
+    background: rgb(33,33,33);
     list-style: none;
 }
 
 .spa-link {
     color: #fff;
+    background: rgb(33,33,33);
     display: inline-block;
     position: relative;
     transition: .3s;
@@ -68,7 +78,7 @@ nav{
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:800px) {
     .nav-links {
         position: absolute;
             right: -100%;
@@ -88,7 +98,7 @@ nav{
     .burger {
         display: block;
         cursor: pointer;
-
+        background: rgba(33,33,33,1);
         span {
             display: block;
             width: 25px;
@@ -136,6 +146,7 @@ nav{
             right: 0;
         }
         .slider-spa-link {
+            background: rgba(33,33,33,1);
             padding: 10px;
         }
         .slider-spa-link li {
@@ -143,13 +154,18 @@ nav{
             width: 100%;
         }
         .slider-spa-link a {
+            background: rgba(33,33,33,1);
             display: block;
             color: white;
             text-decoration: none;
             transition: .3s;
         }
+        .slider-spa-link a::before {
+            content: ':';
+        }
         .slider-spa-link a:hover {
             color: #696969;
+            width: 100%;
         }
 
     }

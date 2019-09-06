@@ -53,7 +53,14 @@ nav {
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 30%; }
+  width: 30%;
+  color: #666; }
+  .nav-links span {
+    background: rgba(226, 226, 226, 0.2);
+    position: relative;
+    top: 2px;
+    width: 1px;
+    height: 20px; }
 
 .nav-links {
   background: #212121; }
@@ -93,8 +100,19 @@ nav {
   .container__wrap {
     position: relative;
     padding: 5px;
-    width: 100%;
-    left: 50%; }
+    width: 100%; }
+
+.person-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .person-items__inner-box-left {
+    flex: 1; }
+  .person-items__inner-box-center {
+    text-align: center;
+    flex: 2; }
+  .person-items__inner-box-right {
+    flex: 1; }
 
 @media screen and (max-width: 1024px) {
   .nav-links {
@@ -166,7 +184,18 @@ nav {
     transition: .3s; }
   .nav-slider .slider-spa-link a:hover {
     color: #696969;
-    width: 100%; } }
+    width: 100%; }
+  .person-items {
+    display: flex;
+    align-items: center; }
+    .person-items__inner-box-left {
+      display: none;
+      flex: 0; }
+    .person-items__inner-box-center {
+      flex: 1; }
+    .person-items__inner-box-right {
+      display: none;
+      flex: 0; } }
 
 @keyframes navLinkFace {
   form {

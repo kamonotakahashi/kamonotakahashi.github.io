@@ -13,12 +13,10 @@
   opacity: 1;
 }
 .v-leave-to {
-  width: 50%;
   transform: translate(0, 100%);
   opacity: 0;
 }
 .v-leave-active {
-  width: 50%;
   transition: all .5s 0s ease;
 }
 * {
@@ -87,7 +85,16 @@ nav {
   display: none; }
 
 .nav-slider li {
+  text-align: center;
   list-style: none; }
+
+.container {
+  z-index: -1; }
+  .container__wrap {
+    position: relative;
+    padding: 5px;
+    width: 100%;
+    left: 50%; }
 
 @media screen and (max-width: 1024px) {
   .nav-links {
@@ -139,7 +146,8 @@ nav {
     width: 40%;
     right: -100%;
     transform: translateX(100%);
-    transition: 1s ease; }
+    transition: 1s ease;
+    z-index: 2; }
   .nav-slider.active {
     transition: .8s ease;
     transform: translateX(0%);

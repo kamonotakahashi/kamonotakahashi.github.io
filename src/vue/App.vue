@@ -3,9 +3,13 @@
 
         <HeadComponent />
 
-        <transition mode="out-in">
-            <router-view />
-        </transition>
+        <div class="container">
+            <div class="container__wrap">
+                <transition mode="out-in">
+                    <router-view />
+                </transition>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -28,6 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
+    //Vue Transition　アニメーションCSS
     .v-enter {
       transform: translate(0, 0);
       opacity: 0;
@@ -43,12 +48,10 @@ export default {
       opacity: 1;
     }
     .v-leave-to {
-      width: 50%;
       transform: translate(0, 100%);
       opacity: 0;
     }
     .v-leave-active {
-      width: 50%;
       transition: all .5s 0s ease;
     }
 </style>

@@ -1,5 +1,9 @@
 <template>
-    <div>aaaa</div>
+
+    <div class="index-contents">
+        antialiase
+    </div>
+
 </template>
 
 <script>

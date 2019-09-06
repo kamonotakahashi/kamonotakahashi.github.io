@@ -4,9 +4,9 @@
         <h4>Kamo</h4>
     </div>
     <ul class="nav-links">
-        <li><router-link to="/" class="spa-link">Home</router-link></li>
-        <li><router-link to="/skills" class="spa-link">About</router-link></li>
-        <li><router-link to="/jobs" class="spa-link">Works</router-link></li>
+        <li><router-link to="/" class="spa-link">Home</router-link></li><span></span>
+        <li><router-link to="/skills" class="spa-link">About</router-link></li><span></span>
+        <li><router-link to="/jobs" class="spa-link">Works</router-link></li><span></span>
         <li><router-link to="/" class="spa-link">Contact</router-link></li>
     </ul>
     <div class="burger" id="burger_item" @click="burgerMenuToggle" :class="{active:burgerMenu_state}">

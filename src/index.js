@@ -22,6 +22,9 @@ import "./sass/index.scss";
 //let fb = firebase.initializeApp(firebaseConfig);
 //export var firebaseDatabase = fb.database();
 
+//Development message disable
+Vue.config.devtools = false;
+
 new Vue({
   el: '#app',
   router,

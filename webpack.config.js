@@ -76,6 +76,9 @@ module.exports = (env, argv) => {
             alias: {
                 'vue$': 'vue/dist/vue.js'
             }
+        },
+        performance: {
+            hints: false
         }
     }
 };

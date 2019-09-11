@@ -1,7 +1,9 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 const { VueLoaderPlugin } = require("vue-loader");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = (env, argv) => {
     const IS_DEVELOPMENT = argv.mode === 'development';
@@ -51,6 +53,14 @@ module.exports = (env, argv) => {
                   test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
                   loader: 'url-loader'
                 },
+                {
+                  test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+                  use: [
+                    {
+                      loader: 'url-loader?limit=100000&name=img/[name].[ext]',
+                    },
+                  ],
+                },
             ]
         },
         plugins: [
@@ -62,7 +72,19 @@ module.exports = (env, argv) => {
             new webpack.ProvidePlugin({
                   $: 'jquery',
                   jQuery: 'jquery'
-                })
+            }),
+            new CopyWebpackPlugin([
+              {
+                from: path.resolve(__dirname, 'src/images/'),
+                to: path.resolve(__dirname, 'dist/media/img/'),
+              },
+            ]),
+            new ImageminPlugin({
+              test: /\.(jpe?g|png|gif|svg)$/i,
+              pngquant: {
+                quality: '50-70',
+              },
+            }),
         ],
         devServer: {
             contentBase: path.join(__dirname, './dist/'),

@@ -11,6 +11,9 @@ import $ from "jquery";
 
 import "./js/common";
 
+//Start Rating
+import StarRating from 'vue-star-rating';
+
 //Bootstrap
 //import "bootstrap";
 import "./sass/index.scss";
@@ -24,6 +27,8 @@ import "./sass/index.scss";
 
 //Development message disable
 Vue.config.devtools = false;
+
+Vue.component('star-rating', StarRating);
 
 new Vue({
   el: '#app',

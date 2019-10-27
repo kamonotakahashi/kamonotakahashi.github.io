@@ -11,7 +11,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-width: 8vh;
-    height: 7vh;
+    height: 50px;
     background: rgb(33,33,33);
     font-family: 'Poppins', sans-serif;;
     box-shadow: 0 0 5px #999;
@@ -20,12 +20,9 @@ nav{
 .logo {
     color: rgb(226,226,226);
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     font-size: 18px;
-    opacity: 1;
-    width: 85px;
-    box-shadow: 0 0 1px #999;
-    border-radius: 0px;
+    width: 150px;
 }
 .logo h4 {
     padding-left: 6px;
@@ -93,8 +90,52 @@ nav{
     }
 }
 
+.contents {
+    &__wrap {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
 
+.form-textarea {
+    border: 1px #ccc solid;
+    width: 100%;
+    height: 100px;
+    min-width: 50%;
+    max-width: 100%;
+    font-size: 16px;
+    box-shadow: 0 0 1px #ccc;
+    &:hover {
+        background-color: #fefefe;
+        box-shadow: 0 0 5px #ccc;
+    }
+}
+.form-group {
+    .form-title {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        font-size: 20px;
+    }
+}
+.spacer-text {
+    &.l1 {
+        padding-left: 2px;
+    }
+    &.l2 {
+        padding-left: 4px;
+    }
 
+    &.t2 {
+        padding-top: 4px;
+    }
+
+    &.b2 {
+        padding-bottom: 4px;
+    }
+}
+.cheering-form {
+    margin-top: 15px;
+}
 @media screen and (max-width:1024px){
     .nav-links {
         width: 40%;
@@ -188,27 +229,6 @@ nav{
             color: #696969;
             width: 100%;
         }
-    }
-
-    .person-items {
-        display: flex;
-        align-items: center;
-
-        &__inner-box-left {
-            display: none;
-            flex: 0;
-        }
-        &__inner-box-center {
-            flex: 1;
-        }
-        &__inner-box-right {
-            display: none;
-            flex: 0;
-        }
-    }
-
-    .my-status-markup {
-        display: none;
     }
 
 }

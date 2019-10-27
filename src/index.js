@@ -28,8 +28,6 @@ import "./sass/index.scss";
 //Development message disable
 Vue.config.devtools = false;
 
-Vue.component('star-rating', StarRating);
-
 new Vue({
   el: '#app',
   router,

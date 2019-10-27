@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     //Vue Transition　アニメーションCSS
     .v-enter {
       transform: translate(0, 0);

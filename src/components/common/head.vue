@@ -1,7 +1,7 @@
 <template>
 <nav>
     <div class="logo">
-        <h4>Kamo</h4>
+        <h4>YS LABO</h4>
     </div>
     <ul class="nav-links">
         <li><router-link to="/" class="spa-link">Home</router-link></li><span></span>

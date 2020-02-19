@@ -1,7 +1,7 @@
 <template>
-    <div id="app">
+    <div>
 
-        <HeadComponent />
+        <vue-header />
 
         <div class="container">
             <div class="container__wrap">
@@ -15,19 +15,21 @@
 </template>
 
 <script>
-import HeadComponent from "../components/common/head";
+import HeadComponent from "./components/globals/TheHeader";
 export default {
-  name : 'App',
-  components: { HeadComponent },
   data: function() {
       return {
+        //
       }
   },
   methods: {
       toggleBtn: function() {
           this.show = !this.show
       }
-  }
+  },
+  components: {
+    HeadComponent,
+  },
 };
 </script>
 

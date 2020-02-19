@@ -1,7 +1,6 @@
 <template>
     <div>
-
-        <vue-header />
+        <vueHeader />
 
         <div class="container">
             <div class="container__wrap">
@@ -15,11 +14,11 @@
 </template>
 
 <script>
-import HeadComponent from "./components/globals/TheHeader";
+import vueHeader from "@/components/globals/TheHeader";
 export default {
+  name: "app",
   data: function() {
       return {
-        //
       }
   },
   methods: {
@@ -28,13 +27,12 @@ export default {
       }
   },
   components: {
-    HeadComponent,
+    vueHeader,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-    //Vue Transition　アニメーションCSS
     .v-enter {
       transform: translate(0, 0);
       opacity: 0;

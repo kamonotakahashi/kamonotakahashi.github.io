@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require("vue-loader");
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
@@ -11,9 +12,9 @@ module.exports = (env, argv) => {
         entry: `./src/index.js`,
         mode: IS_DEVELOPMENT ? "development" : "production",
         output: {
-            path: path.resolve(__dirname, './dist/'),
+            path: path.resolve(__dirname, './dist/assets/'),
             publicPath: "/",
-            filename: "main.js",
+            filename: "js/main.js",
         },
         devtool: IS_DEVELOPMENT ? 'inline-source-map' : 'none',
         module: {
@@ -44,10 +45,11 @@ module.exports = (env, argv) => {
              },
                 {
                   test: /\.scss$/,
-                  use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                  })
+                  use: [
+                    { loader: MiniCssExtractPlugin.loader },
+                    { loader: 'css-loader' },
+                    { loader: 'sass-loader' },
+                  ],
               },
                 {
                   test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
@@ -64,10 +66,9 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
-            new ExtractTextPlugin('style.css'),
             new VueLoaderPlugin(),
-            new webpack.DefinePlugin({
-                "process.env.NODE_ENV" : JSON.stringify("production")
+            new MiniCssExtractPlugin({
+              filename: '/css/style.css'
             }),
             new webpack.ProvidePlugin({
                   $: 'jquery',
@@ -94,7 +95,7 @@ module.exports = (env, argv) => {
             historyApiFallback: true,
         },
         resolve: {
-            extensions: ['.js', '.vue'],
+            extensions: ['.js', '.vue', '.scss'],
             alias: {
               '@': path.resolve(__dirname, 'src'),
             }

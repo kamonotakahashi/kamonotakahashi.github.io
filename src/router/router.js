@@ -1,8 +1,10 @@
-import Router from 'vue-router';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomeComponent from '@/components/pages/Home';
 
-import HomeComponent from '../components/pages/Home';
+Vue.use(VueRouter);
 
-export default new Router({
+export default new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -11,5 +13,4 @@ export default new Router({
       component: HomeComponent,
     },
   ]
-
 });

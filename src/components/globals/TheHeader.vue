@@ -27,7 +27,6 @@
 
 <script>
 export default {
-    name: "vue-header",
     data: function() {
         return {
             isOpen: false,

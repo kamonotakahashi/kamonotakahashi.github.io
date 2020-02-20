@@ -1,0 +1,45 @@
+//local mixin
+@mixin nav($height: 50px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $height;
+    background-color: $darkToneColor;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 5px #999;
+}
+
+@mixin webLogo() {
+    margin-left: 45px;
+    color: $lightToneColor;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+    &__title {
+        text-align: center;
+    }
+}
+
+//Desktop
+@include desktop {
+    .nav {
+        @include nav();
+    }
+    .logo {
+        @include webLogo();
+    }
+}
+
+//Tablet
+@include tablet {
+    nav {
+        @include nav();
+    }
+}
+
+//Mobile
+@include mobile {
+    nav {
+        @include nav();
+    }
+}

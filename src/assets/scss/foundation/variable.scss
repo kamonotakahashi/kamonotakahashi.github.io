@@ -1,3 +1,9 @@
 //color
 $lightToneColor : #f8f8ff;
 $darkToneColor : #212121;
+
+//mixin
+$desktop-min: 768px;
+$tablet-max: 767px;
+$tablet-min: 576px;
+$mobile-max: 575px;

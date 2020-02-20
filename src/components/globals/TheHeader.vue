@@ -1,7 +1,7 @@
 <template>
-    <nav>
+    <nav class="nav">
         <div class="logo">
-            <h4>SZK LABO</h4>
+            <div class="logo__title">SZK LABO</div>
         </div>
         <ul class="nav-links">
             <li><router-link to="/" class="spa-link">Home</router-link></li><span></span>
@@ -20,8 +20,6 @@
             <li class="slider-spa-link" @click="mobileMenu"><router-link to="/jobs" class="link">Works</router-link></li>
             <li class="slider-spa-link" @click="mobileMenu"><router-link to="/" class="link">Contact</router-link></li>
         </ul>
-
-
     </nav>
 </template>
 

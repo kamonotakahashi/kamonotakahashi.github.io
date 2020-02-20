@@ -1,27 +1,3 @@
-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 8vh;
-    height: 50px;
-    background: rgb(33,33,33);
-    font-family: 'Poppins', sans-serif;;
-    box-shadow: 0 0 5px #999;
-}
-
-.logo {
-    color: rgb(226,226,226);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 18px;
-    width: 150px;
-}
-.logo h4 {
-    padding-left: 6px;
-    background: rgb(33,33,33);
-    text-align: center;
-}
-
 .nav-links {
     display: flex;
     justify-content: space-around;
@@ -128,6 +104,7 @@ nav{
 .cheering-form {
     margin-top: 15px;
 }
+
 @media screen and (max-width:1024px){
     .nav-links {
         width: 40%;

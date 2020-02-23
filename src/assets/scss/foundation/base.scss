@@ -7,14 +7,6 @@ html {
     box-sizing: border-box;
 }
 
-.container {
-    z-index: -1;
-    &__wrap {
-        position: relative;
-        width: 100%;
-    }
-}
-
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

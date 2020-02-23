@@ -1,6 +1,11 @@
 <template>
-    <div>
-        aaa
+    <div class="content">
+        <div class="content__wrap">
+            <dl>
+                <dt>a</dt>
+                <dd>aaa</dd>
+            </dl>
+        </div>
     </div>
 </template>
 
@@ -11,7 +16,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-export default class About extends Vue{
+export default class About extends Vue {
 
 }
 </script>

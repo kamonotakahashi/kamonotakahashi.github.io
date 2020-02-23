@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomeComponent from '@/components/pages/Home';
+import AboutComponent from '@/components/pages/About';
 
 Vue.use(VueRouter);
 
@@ -11,6 +12,11 @@ export default new VueRouter({
       path: '/',
       name: 'index',
       component: HomeComponent,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutComponent,
     },
   ]
 });

@@ -4,8 +4,11 @@
             <div class="logo__title">SZK LABO</div>
         </div>
         <ul class="nav__link">
-            <template v-for="nav in header">
-                <li><router-link :to="nav.link">{{nav.name}}</router-link></li><span></span>
+            <template v-for="(nav, index) in header">
+                <li :key="index">
+                    <router-link :to="nav.path">{{nav.name}}</router-link>
+                </li>
+                <span v-if="nav.index !== header.length" />
             </template>
         </ul>
         <div
@@ -21,23 +24,30 @@
         <ul
             :class="['nav__slider' , {'active': burgerStatus}]"
         >
-            <li @click="burgerStatus = !burgerStatus"><router-link to="/" class="link">Home</router-link></li>
-            <li @click="burgerStatus = !burgerStatus"><router-link to="/skills" class="link">About</router-link></li>
-            <li @click="burgerStatus = !burgerStatus"><router-link to="/jobs" class="link">Works</router-link></li>
-            <li @click="burgerStatus = !burgerStatus"><router-link to="/" class="link">Contact</router-link></li>
+            <template v-for="nav in header">
+                <li @click="burgerStatus = !burgerStatus" :key="nav.index">
+                    <router-link :to="nav.path" class="link">{{nav.name}}</router-link>
+                </li>
+            </template>
         </ul>
     </nav>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { header } from '@/config/global';
+import { headerNavigation } from '@/config/global';
 
 @Component
 export default class VueHeader extends Vue {
+
+    /** data */
     private isOpen: boolean = false;
     private burgerStatus: boolean = false;
 
+    /** computed */
+    get header(): {index: number, path: string, name: string} {
+        return headerNavigation;
+    }
 }
 </script>
 

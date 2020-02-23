@@ -2,14 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-//const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = (env, argv) => {
     const IS_DEVELOPMENT = argv.mode === 'development';
     return {
-        entry: `./src/index.js`,
+        entry: `./src/index.ts`,
         mode: IS_DEVELOPMENT ? "development" : "production",
         output: {
             path: path.resolve(__dirname, './dist/assets/'),
@@ -26,6 +25,14 @@ module.exports = (env, argv) => {
                {
                  test: /\.vue\.html$/,
                  loader: "vue-loader"
+             },
+             {
+                test: /\.ts$/,
+                exclude: /node_modules|vue\/src/,
+                loader: 'ts-loader',
+                options: {
+                  appendTsSuffixTo: [/\.vue$/],
+                },
              },
              {
                test: /\.js$/,
@@ -95,13 +102,13 @@ module.exports = (env, argv) => {
             historyApiFallback: true,
         },
         resolve: {
-            extensions: ['.js', '.vue', '.scss'],
+            extensions: ['.ts', '.vue', '.scss', 'json'],
             alias: {
-              '@': path.resolve(__dirname, 'src'),
+              '@': path.resolve('src')
             }
         },
         performance: {
             hints: false
-        }
+        },
     }
 };

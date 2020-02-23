@@ -1,7 +1,6 @@
 <template>
     <div>
-        <vueHeader />
-
+        <VueHeader />
         <div class="container">
             <div class="container__wrap">
                 <transition mode="out-in">
@@ -12,23 +11,19 @@
     </div>
 </template>
 
-<script>
-import vueHeader from "@/components/globals/TheHeader";
-export default {
-  name: "app",
-  data: function() {
-      return {
-      }
-  },
-  methods: {
-      toggleBtn: function() {
-          this.show = !this.show
-      }
-  },
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import VueHeader from '@/components/globals/TheHeader';
+
+@Component({
   components: {
-    vueHeader,
+    VueHeader,
   },
-};
+})
+
+export default class App extends Vue {
+
+}
 </script>
 
 <style lang="scss" scoped>

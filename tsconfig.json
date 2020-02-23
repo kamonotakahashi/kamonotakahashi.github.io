@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@": ["src"],
+            "*": [
+                "src/types/*"
+            ]
+        },
+        "target": "es2015",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "lib": [
+        "dom",
+        "esnext"
+        ],
+        "sourceMap": true,
+        "strict": true,
+    },
+    "include": [
+        "./src/*.ts"
+    ]
+}

@@ -1,4 +1,4 @@
-@mixin flexTwoColumn($width: 50%) {
+@mixin flexTwoColumn($width: 60%) {
     display : -webkit-box;     /* old Android */
     display : -webkit-flex;    /* Safari etc. */
     display : -ms-flexbox;     /* IE10        */
@@ -6,7 +6,12 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     div {
-        width: $width;
+        &:nth-child(1) {
+            width: $width;
+        }
+        &:nth-child(2) {
+            width: 100 - $width;
+        }
     }
 }
 

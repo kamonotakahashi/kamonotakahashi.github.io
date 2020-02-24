@@ -17,13 +17,13 @@
 //Tablet
 @include tablet {
     .container {
-        @include container(80%);
+        @include container(95%);
     }
 }
 
 //Mobile
 @include mobile {
     .container {
-        @include container();
+        @include container(95%);
     }
 }

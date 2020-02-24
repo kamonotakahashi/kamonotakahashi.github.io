@@ -1,7 +1,7 @@
 <template>
     <div class="tag">
-        <template v-for="(tag, index) in tags">
-            <li :key="index">
+        <ul>
+            <li  v-for="(tag, index) in tags" :key="index" class="mr-10">
                 <template v-if="tag.link">
                     <a :href="tag.link" target="_blank">{{tag.name}}</a>
                 </template>
@@ -9,7 +9,7 @@
                     {{tag.name}}
                 </template>
             </li>
-        </template>
+        </ul>
     </div>
 </template>
 

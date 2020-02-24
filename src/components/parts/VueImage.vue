@@ -6,6 +6,7 @@
             :class="{ 'img-avator' : imageType }"
             :width="width"
             :height="height"
+
         />
     </div>
 </template>

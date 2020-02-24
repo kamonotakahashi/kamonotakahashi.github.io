@@ -1,8 +1,10 @@
-@mixin tag($display: inline) {
+@mixin tag($display: flex) {
+    ul {
+        display: $display;
+    }
     li {
         list-style-type: none;
-        display: $display;
-        margin-right: 10px;
+        white-space: nowrap;
     }
 }
 

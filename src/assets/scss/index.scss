@@ -8,3 +8,11 @@
 //other
 @import "@/assets/scss/layout/header";
 @import "@/assets/scss/layout/content";
+
+//object.component
+@import "@/assets/scss/object/component/c-text.scss";
+@import "@/assets/scss/object/component/c-img.scss";
+
+//object.project
+@import "@/assets/scss/object/project/p-column.scss";
+@import "@/assets/scss/object/project/p-tag.scss";

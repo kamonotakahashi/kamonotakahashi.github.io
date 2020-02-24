@@ -84,7 +84,7 @@ module.exports = (env, argv) => {
             new CopyWebpackPlugin([
               {
                 from: path.resolve(__dirname, 'src/assets/images/'),
-                to: path.resolve(__dirname, 'dist/media/img/'),
+                to: path.resolve(__dirname, 'dist/assets/img/'),
               },
             ]),
             new ImageminPlugin({

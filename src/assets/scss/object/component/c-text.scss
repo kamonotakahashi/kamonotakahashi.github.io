@@ -1,0 +1,42 @@
+.headline {
+    font-family: "新丸ゴ";
+    font-size: 28px;
+}
+
+/* コンテンツ位置 */
+.block-center {
+    margin: 0 auto;
+}
+
+/* テキスト位置 */
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+.line-height-normal {
+    line-height: 1.8rem;
+}
+
+/* margin */
+@for $i from 1 through 20 {
+    .ma-#{$i} { margin: 0px + $i }
+    .mt-#{$i} { margin-top: 0px + $i }
+    .ml-#{$i} { margin-left: 0px + $i }
+    .mr-#{$i} { margin-right: 0px + $i }
+    .mb-#{$i} { margin-bottom: 0px + $i }
+}
+
+/* padding */
+@for $i from 1 through 20 {
+    .pa-#{$i} { padding: 0px + $i }
+    .pt-#{$i} { padding-top: 0px + $i }
+    .pl-#{$i} { padding-left: 0px + $i }
+    .pr-#{$i} { padding-right: 0px + $i }
+    .pb-#{$i} { padding-bottom: 0px + $i }
+}

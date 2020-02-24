@@ -11,4 +11,4 @@
 package-lock.json
 
 node_modules/.cache/
-src/images/
+/src/assets/images

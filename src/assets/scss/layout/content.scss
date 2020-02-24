@@ -1,14 +1,29 @@
-.container {
+@mixin container($width: 90%) {
     z-index: -1;
+    width: 100%;
     &__wrap {
-        position: relative;
-        width: 100%;
+        width: $width;
+        margin: 0 auto;
     }
-    .content {
-        margin-top: 20px;
-        &__wrap {
-            width: 90%;
-            margin: 0 auto;
-        }
+}
+
+//Desktop
+@include desktop {
+    .container {
+        @include container();
+    }
+}
+
+//Tablet
+@include tablet {
+    .container {
+        @include container(80%);
+    }
+}
+
+//Mobile
+@include mobile {
+    .container {
+        @include container();
     }
 }

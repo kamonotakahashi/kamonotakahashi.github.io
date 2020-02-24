@@ -1,0 +1,28 @@
+@mixin tag($display: inline) {
+    li {
+        list-style-type: none;
+        display: $display;
+        margin-right: 10px;
+    }
+}
+
+//Desktop
+@include desktop {
+    .tag {
+        @include tag();
+    }
+}
+
+//Tablet
+@include tablet {
+    .tag {
+        @include tag();
+    }
+}
+
+//Mobile
+@include mobile {
+    .tag {
+        @include tag();
+    }
+}

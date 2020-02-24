@@ -1,0 +1,32 @@
+@mixin flexTwoColumn($width: 50%) {
+    display : -webkit-box;     /* old Android */
+    display : -webkit-flex;    /* Safari etc. */
+    display : -ms-flexbox;     /* IE10        */
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    div {
+        width: $width;
+    }
+}
+
+//Desktop
+@include desktop {
+    .flex-two-column {
+        @include flexTwoColumn();
+    }
+}
+
+//Tablet
+@include tablet {
+    .flex-two-column {
+        @include flexTwoColumn(100%);
+    }
+}
+
+//Mobile
+@include mobile {
+    .flex-two-column {
+        @include flexTwoColumn(100%);
+    }
+}

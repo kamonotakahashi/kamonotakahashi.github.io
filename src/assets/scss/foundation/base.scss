@@ -1,15 +1,20 @@
 html {
     background-color: $lightToneColor;
 }
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-  }
+a {
+    color: #708090;
+    &:hover {
+        color: #3399ff;
+    }
+}
+
+dt, dd {
+    margin-bottom: 10px;
+}

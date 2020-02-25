@@ -12,8 +12,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import VueHeader from '@/components/globals/TheHeader';
+import store from '@/store/global';
 
 @Component({
   components: {
@@ -22,6 +23,31 @@ import VueHeader from '@/components/globals/TheHeader';
 })
 
 export default class App extends Vue {
+
+  private store = store;
+
+  private client : {width:number, height:number} = {
+    width:0,
+    height: 0
+  }
+
+  /* Methods */
+  private handleResize():void {
+    store.setWindow(window);
+    this.client.width = store.getWindowWidth || 0;
+    this.client.height = store.getWindowHeight || 0;
+  }
+
+  /* Mounted */
+  mounted() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  /* BeforeDestroy */
+  beforeDestroy() {
+    window.addEventListener('resize', this.handleResize);
+  }
 
 }
 </script>

@@ -10,7 +10,11 @@
             width: $width;
         }
         &:nth-child(2) {
-            width: 100 - $width;
+            @if 100% != $width {
+                width: 100 - $width;
+            } @else {
+                width: $width;
+            }
         }
     }
 }

@@ -50,7 +50,8 @@
 </style>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import store from '@/store/global';
 
 import VueImage from '@/components/parts/VueImage';
 import VueTag from '@/components/parts/VueTag';
@@ -65,9 +66,18 @@ import VueLiner from '@/components/parts/VueLiner';
 })
 
 export default class About extends Vue {
+
+    private store = store;
+
     private tags: {name: string, link?: string}[] = [
         {name : "福井県出身", link: "https://ja.wikipedia.org/wiki/%E7%A6%8F%E4%BA%95%E7%9C%8C"},
         {name : "Webエンジニア", link: undefined}
-    ]
+    ];
+
+    @Watch('store', {immediate: true})
+    private resize(val, oldVal) {
+        console.log(val)
+    }
+
 }
 </script>

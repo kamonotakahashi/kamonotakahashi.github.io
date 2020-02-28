@@ -1,24 +1,29 @@
-import Vue from 'vue';
+import { Vue, Component } from "vue-property-decorator";
 
-class Store {
-
-    private clientWindowWidth: number;
-    private clientWindowHeight: number;
-
-    public get getWindowWidth() :number {
-        return this.clientWindowWidth;
-    }
-
-    public get getWindowHeight() :number {
-        return this.clientWindowHeight;
-    }
-
-    public setWindow(window: any) {
-        if(window) {
-            this.clientWindowWidth = window.innerWidth || 0;
-            this.clientWindowHeight = window.innerHeight || 0;
-        }
+type State = {
+    client : {
+        width: number,
+        height: number
     }
 }
 
-export default Vue.observable(new Store());
+const state = Vue.observable<State>({
+    client : {
+        width: 0,
+        height: 0
+    }
+});
+
+@Component
+export default class StoreMixin extends Vue {
+
+    get clientWindowWidth() { return state.client.width};
+    get clientWindowHeight() { return state.client.height};
+
+    setWindow(window: any) {
+        if(window) {
+            state.client.width = window.innerWidth || 0;
+            state.client.height = window.innerHeight || 0;
+        }
+    }
+}

@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue, Mixins } from 'vue-property-decorator';
 import VueHeader from '@/components/globals/TheHeader';
-import store from '@/store/global';
+import StoreMixin from '@/store/global';
 
 @Component({
   components: {
@@ -22,9 +22,7 @@ import store from '@/store/global';
   },
 })
 
-export default class App extends Vue {
-
-  private store = store;
+export default class App extends Mixins(StoreMixin) {
 
   private client : {width:number, height:number} = {
     width:0,
@@ -33,9 +31,11 @@ export default class App extends Vue {
 
   /* Methods */
   private handleResize():void {
-    store.setWindow(window);
-    this.client.width = store.getWindowWidth || 0;
-    this.client.height = store.getWindowHeight || 0;
+
+    //Storeに書き込み
+    this.setWindow(window);
+    this.client.width = this.clientWindowWidth || 0;
+    this.client.height = this.clientWindowHeight || 0;
   }
 
   /* Mounted */

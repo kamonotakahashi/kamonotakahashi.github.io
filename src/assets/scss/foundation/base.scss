@@ -18,3 +18,11 @@ a {
 dt, dd {
     margin-bottom: 10px;
 }
+
+button {
+    border: 1px #ccc solid;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,29 @@
+@mixin button() {
+    padding: 10px;
+    font-size: 12px;
+    &.dark {
+        color: white;
+        background-color: $darkToneColor;
+    }
+}
+
+//Desktop
+@include desktop {
+    .btn {
+        @include button();
+    }
+}
+
+//Tablet
+@include tablet {
+    .btn {
+        @include button();
+    }
+}
+
+//Mobile
+@include mobile {
+    .btn {
+        @include button();
+    }
+}

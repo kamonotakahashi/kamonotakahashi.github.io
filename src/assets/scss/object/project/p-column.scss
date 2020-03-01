@@ -19,10 +19,33 @@
     }
 }
 
+@mixin flexThreeColumn($width: 33) {
+    display : -webkit-box;     /* old Android */
+    display : -webkit-flex;    /* Safari etc. */
+    display : -ms-flexbox;     /* IE10        */
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    div {
+        @if 100% != $width {
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    flex: 1;
+                }
+            }
+        } @else {
+            flex: $width;
+        }
+    }
+}
+
 //Desktop
 @include desktop {
     .flex-two-column {
         @include flexTwoColumn();
+    }
+    .flex-three-column {
+        @include flexThreeColumn();
     }
 }
 
@@ -31,11 +54,17 @@
     .flex-two-column {
         @include flexTwoColumn(100%);
     }
+    .flex-three-column {
+        @include flexThreeColumn(100%);
+    }
 }
 
 //Mobile
 @include mobile {
     .flex-two-column {
         @include flexTwoColumn(100%);
+    }
+    .flex-three-column {
+        @include flexThreeColumn(100%);
     }
 }

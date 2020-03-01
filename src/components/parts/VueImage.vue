@@ -3,7 +3,7 @@
         <img
             class="image"
             :src="src"
-            :class="{ 'img-avator' : imageType }"
+            :class="[imageType]"
             :width="width"
             :height="height"
 
@@ -24,9 +24,11 @@ export default class VueImage extends Vue {
     @Prop({ default: 'picture', required: false }) type!: string;
     @Prop({ required: false }) width!: string;
     @Prop({ required: false }) height!: string;
+    @Prop({ required: false }) align!: string;
+    @Prop({ required: false }) valign!: string;
 
-    private get imageType(): boolean {
-        return this.type == 'avator';
+    private get imageType(): string {
+        return `img-${this.type}`;
     }
 
 }

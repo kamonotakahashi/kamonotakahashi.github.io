@@ -28,11 +28,14 @@ module.exports = (env, argv) => {
              },
              {
                 test: /\.ts$/,
-                exclude: /node_modules|vue\/src/,
-                loader: 'ts-loader',
-                options: {
-                  appendTsSuffixTo: [/\.vue$/],
-                },
+                exclude: /node_modules/,
+                use: {
+                  loader: 'ts-loader',
+                  options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                    configFile: path.resolve(__dirname, "tsconfig.json")
+                  },
+                }
              },
              {
                test: /\.js$/,
@@ -104,7 +107,7 @@ module.exports = (env, argv) => {
         resolve: {
             extensions: ['.ts', '.vue', '.scss', 'json'],
             alias: {
-              '@': path.resolve('src')
+              '@': path.resolve(__dirname, 'src')
             }
         },
         performance: {

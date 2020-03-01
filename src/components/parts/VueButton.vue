@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn" :class="colorType">
+        <button class="btn" :class="colorType" @click="clickEvent">
             <slot></slot>
         </button>
     </div>
@@ -18,8 +18,13 @@ export default class VueButton extends Vue {
     @Prop({ required: false, default: 'light' }) type!: string;
     @Prop({ required: false, default: '100' }) width!: number;
 
-    get colorType() :string {
-        return this.type;
+    get colorType() :string[] {
+        return [this.type, `w-${this.width}`];
     }
+
+    private clickEvent(): void {
+        this.$emit("event", true);
+    }
+
 }
 </script>

@@ -1,25 +1,34 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./",
         "paths": {
-            "@": ["src"],
-            "*": [
-                "src/types/*"
+            "@/*": [
+                "src/*"
+            ],
+            "@": [
+                "src"
             ]
         },
-        "target": "es2015",
-        "module": "es2015",
+        "target": "es5",
+        "module": "es6",
         "moduleResolution": "node",
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "lib": [
-        "dom",
-        "esnext"
+            "dom",
+            "esnext"
         ],
         "sourceMap": true,
         "strict": true,
     },
+    "files": [
+        "src/shims-vue.d.ts"
+    ],
     "include": [
-        "./src/*.ts"
+        "src/**/*.ts*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }

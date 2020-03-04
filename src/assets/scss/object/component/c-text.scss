@@ -3,6 +3,7 @@
     &-left {
     }
     &-center {
+        position: relative;
         margin: 0 auto;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);

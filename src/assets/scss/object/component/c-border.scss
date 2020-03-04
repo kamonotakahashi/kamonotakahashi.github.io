@@ -4,3 +4,9 @@
     border-color: $darkToneColor;
     height: 1px;
 }
+
+.border-text {
+    &-bottom {
+        border-bottom: 1px #87cefa solid;
+    }
+}

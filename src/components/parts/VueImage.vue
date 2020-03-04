@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="img-position">
         <img
             class="image"
             :src="src"
@@ -12,7 +12,9 @@
 </template>
 
 <style lang="scss" scoped>
+.img-position {
 
+}
 </style>
 
 <script lang="ts">

@@ -1,10 +1,11 @@
-@mixin flexTwoColumn($width: 60%) {
+@mixin flexTwoColumn($width: 60%, $direction : row) {
     display : -webkit-box;     /* old Android */
     display : -webkit-flex;    /* Safari etc. */
     display : -ms-flexbox;     /* IE10        */
     display : flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    flex-direction: $direction;
     div {
         &:nth-child(1) {
             width: $width;
@@ -42,7 +43,7 @@
 //Desktop
 @include desktop {
     .flex-two-column {
-        @include flexTwoColumn();
+        @include flexTwoColumn(40%, row-reverse);
     }
     .flex-three-column {
         @include flexThreeColumn();
@@ -52,7 +53,7 @@
 //Tablet
 @include tablet {
     .flex-two-column {
-        @include flexTwoColumn(100%);
+        @include flexTwoColumn(100%, row-reverse);
     }
     .flex-three-column {
         @include flexThreeColumn(100%);
@@ -62,7 +63,7 @@
 //Mobile
 @include mobile {
     .flex-two-column {
-        @include flexTwoColumn(100%);
+        @include flexTwoColumn(100%, row-reverse);
     }
     .flex-three-column {
         @include flexThreeColumn(100%);

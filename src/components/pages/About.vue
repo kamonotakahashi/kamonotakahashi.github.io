@@ -3,6 +3,26 @@
         <div class="content__wrap">
             <div class="flex-two-column mt-20 about-content">
                 <div>
+                    <div class="text-center valign-middle block-center pa-10">
+                        <!--VueImage
+                            src="/assets/img/szk_profile.jpg"
+                            type="avator"
+                            width="300"
+                            height="280"
+                            align="center"
+                            valign="middle"
+                        /-->
+                        <VueImage
+                            src="https://my.royalcanin.jp/customize/img/knowledge/shiba_inu/img_kind.jpg"
+                            type="avator"
+                            width="300"
+                            height="280"
+                            align="center"
+                            valign="middle"
+                        />
+                    </div>
+                </div>
+                <div>
                     <dl>
                         <dt class="headline mb-15">
                             鈴木　祐貴
@@ -35,18 +55,6 @@
                         </template>
                     </dl>
                 </div>
-                <div>
-                    <div class="text-center valign-middle block-center pa-10">
-                        <VueImage
-                            src="/assets/img/szk_profile.jpg"
-                            type="avator"
-                            width="300"
-                            height="280"
-                            align="center"
-                            valign="middle"
-                        />
-                    </div>
-                </div>
             </div>
             <div class="mt-20">
                 <h1 class="sub-title-2 pt-5 pb-5">
@@ -54,21 +62,21 @@
                 </h1>
                 <div class="skill flex-three-column">
                     <div class="py-5 pr-5">
-                        <div class="bg-light-gray pl-4 py-10">プログラミング</div>
+                        <div class="border-text-bottom text-center pl-4 py-10">プログラミング</div>
                         <dl>
                             <dt>a</dt>
                             <dd>a</dd>
                         </dl>
                     </div>
                     <div class="py-5 pr-5">
-                        <div class="bg-light-gray pl-4 py-10">システム設計</div>
+                        <div class="border-text-bottom text-center pl-4 py-10">システム設計</div>
                         <dl>
                             <dt>a</dt>
                             <dd>a</dd>
                         </dl>
                     </div>
                     <div class="py-5">
-                        <div class="bg-light-gray pl-4 py-10">インフラストラクチャー</div>
+                        <div class="border-text-bottom text-center pl-4 py-10">インフラストラクチャー</div>
                         <dl>
                             <dt>a</dt>
                             <dd>a</dd>

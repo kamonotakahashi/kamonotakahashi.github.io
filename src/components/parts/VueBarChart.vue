@@ -2,12 +2,13 @@
     <div class="chart-bar">
         <div
             class="chart-bar__info"
-            :class="bgColor"
-            :data-total="persent"
+            :class="[bgColor]"
+            :style="{ width : changeWidth }"
+            :data-total="percent"
         >
             {{value}}
-            <span class="chart-bar__info__persent">
-                {{persent}}
+            <span class="percent">
+                {{percent}}%
             </span>
         </div>
     </div>
@@ -22,12 +23,16 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
 export default class VueButton extends Vue {
-    @Prop({ required: true }) persent!: number;
+    @Prop({ required: true, default: 10 }) percent!: number;
     @Prop({ required: true }) value!: string;
     @Prop({ required: false, default: 'gray' }) color!: string;
 
     private get bgColor(): string {
-        return `bg-${this.color}`;
+        return `chart-bar__bg-${this.color}`;
+    }
+
+    private get changeWidth() :string {
+        return `${this.percent}%`;
     }
 
 }

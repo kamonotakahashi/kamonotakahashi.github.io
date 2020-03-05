@@ -65,9 +65,11 @@
                         <div class="border-text-bottom text-center pl-4 py-10">プログラミング</div>
                         <dl>
                             <dt>
-                                <VueBarChart persent="50" value="test" color="red" />
+                                <VueBarChart percent="50" value="test" color="gray" />
                             </dt>
-                            <dd>a</dd>
+                            <dd>
+                                <VueBarChart percent="100" value="test" color="light-blue" />
+                            </dd>
                         </dl>
                     </div>
                     <div class="py-5 pr-5">

@@ -64,7 +64,9 @@
                     <div class="py-5 pr-5">
                         <div class="border-text-bottom text-center pl-4 py-10">プログラミング</div>
                         <dl>
-                            <dt>a</dt>
+                            <dt>
+                                <VueBarChart persent="50" value="test" color="red" />
+                            </dt>
                             <dd>a</dd>
                         </dl>
                     </div>
@@ -101,13 +103,15 @@ import VueImage from '@/components/parts/VueImage';
 import VueTag from '@/components/parts/VueTag';
 import VueLiner from '@/components/parts/VueLiner';
 import VueButton from '@/components/parts/VueButton';
+import VueBarChart from '@/components/parts/VueBarChart';
 
 @Component({
   components: {
     VueImage,
     VueTag,
     VueLiner,
-    VueButton
+    VueButton,
+    VueBarChart
   },
 })
 

@@ -3,7 +3,7 @@
         <div
             class="chart-bar__info"
             :class="[bgColor]"
-            :style="{ width : changeWidth }"
+            :style="{ width : changeWidth, 'font-size': changeFontSize }"
             :data-total="percent"
         >
             {{value}}
@@ -26,6 +26,7 @@ export default class VueButton extends Vue {
     @Prop({ required: true, default: 10 }) percent!: number;
     @Prop({ required: true }) value!: string;
     @Prop({ required: false, default: 'gray' }) color!: string;
+    @Prop({ required: false, default: 14 }) fontSize!: number;
 
     private get bgColor(): string {
         return `chart-bar__bg-${this.color}`;
@@ -33,6 +34,10 @@ export default class VueButton extends Vue {
 
     private get changeWidth() :string {
         return `${this.percent}%`;
+    }
+
+    private get changeFontSize() :string {
+        return `${this.fontSize}px`;
     }
 
 }

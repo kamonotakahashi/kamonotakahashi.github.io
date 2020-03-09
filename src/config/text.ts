@@ -15,3 +15,17 @@ export const profileText = [
         開発を主にした仕事をしております。
     `,
 ];
+
+/* 資格 */
+export const certificate = [
+    { name: "ホームページ作成検定試験1級", acquisitionDate: "2013-12", period: false, year: 0 },
+    { name: "IPA ITパスポート", acquisitionDate: "2014-08", period: false, year: 0 },
+    { name: "Certified Linux Administrator (LPIC-1)", acquisitionDate: "2017-08", period: true, year: 5 },
+    { name: "IPA 情報セキュリティマネジメント", acquisitionDate: "2017-11", period: false, year: 0 },
+    { name: "Cisco Certified Network Associate Routing and Switching (CCNA)", acquisitionDate: "2018-04", period: true, year: 3 },
+    { name: "NTT .com Master Advance", acquisitionDate: "2018-06", period: false, year: 0 },
+    { name: "Java SE 8 Programmer I", acquisitionDate: "2019-01", period: false, year: 0 },
+    { name: "IPA 情報技術者試験", acquisitionDate: "2019-05", period: false, year: 0 },
+    { name: "Certified Linux Administrator (LPIC-2)", acquisitionDate: "2019-07", period: true, year: 5 },
+    { name: "AWS 認定ソリューションアーキテクト – アソシエイト", acquisitionDate: "2020-02", period: true, year: 3 },
+];

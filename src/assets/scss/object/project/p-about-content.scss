@@ -2,4 +2,31 @@
     dl,dt,dd {
         width: 100%;
     }
+    .certificate__table {
+        &__head {
+            background-color: #3866AB;
+            border: 1px #ccc solid;
+            color: #fff;
+        }
+        &__body {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        dl {
+            display: flex;
+            width: 100%;
+        }
+        dd {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            &:nth-child(1) {
+                width: 60%;
+            }
+            &:nth-child(2) {
+                width: 20%;
+            }
+            &:nth-child(3) {
+                width: 20%;
+            }
+        }
+    }
 }

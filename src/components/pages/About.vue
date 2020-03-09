@@ -64,12 +64,27 @@
                     <div class="py-5 pr-5">
                         <div class="border-text-bottom text-center pl-4 py-10">プログラミング</div>
                         <dl>
-                            <dt>
-                                <VueBarChart percent="50" value="test" color="gray" />
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="70" value="PHP" color="gray" />
                             </dt>
-                            <dd>
-                                <VueBarChart percent="100" value="test" color="light-blue" />
-                            </dd>
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="65" value="JavaScript" color="light-blue" />
+                            </dt>
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="55" value="Python" color="light-blue" />
+                            </dt>
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="50" value="Java" color="light-blue" />
+                            </dt>
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="50" value="Bash/PowerShell" f-size="15" color="light-blue" />
+                            </dt>
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="45" value="VBA/VBS" color="light-blue" />
+                            </dt>
+                            <dt class="mt-5 mb-5">
+                                <VueBarChart percent="40" value="C" color="light-blue" />
+                            </dt>
                         </dl>
                     </div>
                     <div class="py-5 pr-5">

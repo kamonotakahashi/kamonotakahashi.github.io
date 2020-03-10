@@ -96,6 +96,7 @@ module.exports = (env, argv) => {
                 quality: '50-70',
               },
             }),
+            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         ],
         devServer: {
             contentBase: path.join(__dirname, './dist/'),

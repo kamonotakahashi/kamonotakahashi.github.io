@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <dl>
-                        <dt class="headline mb-15">
+                        <dt class="headline my-15">
                             鈴木　祐貴
                         </dt>
                         <dt>
@@ -149,7 +149,10 @@
                         <dl class="certificate__table__body" :key="index">
                             <dd class="text-center">{{certificate.name}}</dd>
                             <dd class="text-center">{{certificate.acquisitionDate}}</dd>
-                            <dd class="text-center">Status</dd>
+                            <dd class="text-center">
+                            {{
+                                certificateCheckExpire(certificate.acquisitionDate, certificate.period, certificate.year)
+                            }}</dd>
                         </dl>
                     </template>
                 </div>
@@ -166,12 +169,14 @@
 import { Component, Mixins, Watch } from 'vue-property-decorator';
 import { profileText, certificate } from '@/config/text';
 import StoreMixin from '@/store/global';
-
 import VueImage from '@/components/parts/VueImage.vue';
 import VueTag from '@/components/parts/VueTag.vue';
 import VueLiner from '@/components/parts/VueLiner.vue';
 import VueButton from '@/components/parts/VueButton.vue';
 import VueBarChart from '@/components/parts/VueBarChart.vue';
+import moment from 'moment';
+
+const certificateStatus = ["active", "inactive"];
 
 @Component({
   components: {
@@ -185,26 +190,34 @@ import VueBarChart from '@/components/parts/VueBarChart.vue';
 export default class About extends Mixins(StoreMixin) {
 
     private profileMore: boolean = true;
+    private certificateOnEnable: boolean[] = [];
     private tags: {name: string, link?: string}[] = [
         {name : "福井県出身", link: "https://ja.wikipedia.org/wiki/%E7%A6%8F%E4%BA%95%E7%9C%8C"},
         {name : "Webエンジニア", link: undefined}
     ];
 
-    profile(value: number) :string {
-        return profileText[value];
-    };
-
-    get clientWidth():number {
+    private get clientWidth():number {
         this.profileMore = 575 < this._client.window_width ? true : false;
         return this._client.window_width;
     };
 
-    get certificates(): {name: string, acquisitionDate: string, period: boolean, year: number }[] {
+    private get certificates(): {name: string, acquisitionDate: string, period: boolean, year: number }[] {
         return certificate;
     }
 
-    profileMoreAction(value: any):void {
+    private profile(value: number) :string {
+        return profileText[value];
+    };
+
+    private profileMoreAction(value: any):void {
         this.profileMore = true;
+    }
+
+    private certificateCheckExpire(date: Date, peried: boolean, year:number):string {
+        if(!peried || moment().format("YYYY-MM") < moment(date).add(year, "year").format("YYYY-MM")) {
+            return certificateStatus[0];
+        }
+        return certificateStatus[1];
     }
 
 }

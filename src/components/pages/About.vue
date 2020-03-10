@@ -33,7 +33,7 @@
                         <dd class="mt-15 line-height-normal">
                             {{profile(0)}}
                         </dd>
-                        <template v-if="575 < width || profileMore">
+                        <template v-if="575 < clientWidth || profileMore">
                             <VueLiner />
                             <dd class="mt-15 line-height-normal">
                                 {{profile(1)}}
@@ -182,7 +182,6 @@ import VueBarChart from '@/components/parts/VueBarChart.vue';
     VueBarChart
   },
 })
-
 export default class About extends Mixins(StoreMixin) {
 
     private profileMore: boolean = true;
@@ -195,9 +194,9 @@ export default class About extends Mixins(StoreMixin) {
         return profileText[value];
     };
 
-    get width():number {
-        this.profileMore = 575 < this.clientWindowWidth ? true : false;
-        return this.clientWindowWidth;
+    get clientWidth():number {
+        this.profileMore = 575 < this._client.window_width ? true : false;
+        return this._client.window_width;
     };
 
     get certificates(): {name: string, acquisitionDate: string, period: boolean, year: number }[] {

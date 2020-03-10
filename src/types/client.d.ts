@@ -1,4 +1,5 @@
 export interface Client {
-    width : number,
-    height : number,
+    window_width : number,
+    window_height : number,
+    scroll_top : number,
 }

@@ -24,29 +24,24 @@ import StoreMixin from '@/store/global';
 
 export default class App extends Mixins(StoreMixin) {
 
-  private client : {width:number, height:number} = {
-    width:0,
-    height: 0
-  }
-
   /* Methods */
-  private handleResize():void {
+  private handler():void {
 
     //Storeに書き込み
-    this.setWindow(window);
-    this.client.width = this.clientWindowWidth || 0;
-    this.client.height = this.clientWindowHeight || 0;
+    this.setWindow();
   }
 
   /* Mounted */
   mounted() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
+    this.handler();
+    window.addEventListener('resize', this.handler);
+    window.addEventListener('scroll', this.handler);
   }
 
   /* BeforeDestroy */
   beforeDestroy() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handler);
+    window.addEventListener('scroll', this.handler);
   }
 
 }

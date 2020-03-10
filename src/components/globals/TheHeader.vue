@@ -34,26 +34,40 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Mixins } from 'vue-property-decorator';
+//Components
+import { Component, Vue, Mixins, Watch } from 'vue-property-decorator';
+
+//Config
 import { headerNavigation } from '@/config/global';
+
+//Types
 import { Client } from '@/types/client';
+
+//Store
 import StoreMixin from '@/store/global';
 
 @Component
-//export default class VueHeader extends Vue {
 export default class VueHeader extends Mixins(StoreMixin) {
 
     /** data */
     private isOpen: boolean = false;
     private burgerStatus: boolean = false;
 
-    get clientWindow(): Client {
-        return this.clientWindow;
-    };
-
-    /** computed */
+    /** Computed */
     get header(): {index: number, path: string, name: string}[] {
         return headerNavigation;
+    }
+
+    /* Watch */
+    @Watch('_client', { deep: true })
+    private onHeaderFixedChange(_client: Client):void {
+        if(_client.scroll_top > 60) {
+            $("nav").addClass("has_smaller");
+            $(".nav__slider").addClass("has_smaller__slider");
+        } else {
+            $("nav").removeClass("has_smaller");
+            $(".nav__slider").removeClass("has_smaller__slider");
+        }
     }
 
 }

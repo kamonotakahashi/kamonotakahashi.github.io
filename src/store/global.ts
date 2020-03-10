@@ -7,25 +7,22 @@ type State = {
 
 const state = Vue.observable<State>({
     client : {
-        width: 0,
-        height: 0
+        window_width: 0,
+        window_height: 0,
+        scroll_top: 0,
     }
 });
 
 @Component
 export default class StoreMixin extends Vue {
 
-    get clientWindow() {
+    get _client() {
         return state.client;
     }
 
-    get clientWindowWidth() { return state.client.width };
-    get clientWindowHeight() { return state.client.height };
-
-    setWindow(window: any) {
-        if(window) {
-            state.client.width = window.innerWidth || 0;
-            state.client.height = window.innerHeight || 0;
-        }
+    setWindow() {
+        state.client.window_width = $(window).width() || 0;
+        state.client.window_height = $(window).height() || 0;
+        state.client.scroll_top = $(window).scrollTop() || 0;
     }
 }

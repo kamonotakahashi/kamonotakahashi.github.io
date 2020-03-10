@@ -166,11 +166,12 @@
 import { Component, Mixins, Watch } from 'vue-property-decorator';
 import { profileText, certificate } from '@/config/text';
 import StoreMixin from '@/store/global';
-import VueImage from '@/components/parts/VueImage';
-import VueTag from '@/components/parts/VueTag';
-import VueLiner from '@/components/parts/VueLiner';
-import VueButton from '@/components/parts/VueButton';
-import VueBarChart from '@/components/parts/VueBarChart';
+
+import VueImage from '@/components/parts/VueImage.vue';
+import VueTag from '@/components/parts/VueTag.vue';
+import VueLiner from '@/components/parts/VueLiner.vue';
+import VueButton from '@/components/parts/VueButton.vue';
+import VueBarChart from '@/components/parts/VueBarChart.vue';
 
 @Component({
   components: {

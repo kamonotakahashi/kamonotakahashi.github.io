@@ -8,7 +8,7 @@
                 <li :key="index">
                     <router-link :to="nav.path">{{nav.name}}</router-link>
                 </li>
-                <span v-if="nav.index !== header.length" />
+                <span v-if="nav.index !== header.length" :key="'_'+index" />
             </template>
         </ul>
         <div
@@ -34,20 +34,28 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Mixins } from 'vue-property-decorator';
 import { headerNavigation } from '@/config/global';
+import { Client } from '@/types/client';
+import StoreMixin from '@/store/global';
 
 @Component
-export default class VueHeader extends Vue {
+//export default class VueHeader extends Vue {
+export default class VueHeader extends Mixins(StoreMixin) {
 
     /** data */
     private isOpen: boolean = false;
     private burgerStatus: boolean = false;
 
+    get clientWindow(): Client {
+        return this.clientWindow;
+    };
+
     /** computed */
-    get header(): {index: number, path: string, name: string} {
+    get header(): {index: number, path: string, name: string}[] {
         return headerNavigation;
     }
+
 }
 </script>
 

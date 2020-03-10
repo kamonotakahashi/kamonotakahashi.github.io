@@ -54,6 +54,16 @@
     }
 }
 
+@mixin fixed() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    min-width: 100%;
+    transition: .3s;
+}
+
 @keyframes navLinkFace {
     form {
         opacity: 0;
@@ -81,6 +91,10 @@
         &__slider {
             display: none;
         }
+    }
+    .is_fixed {
+        @include fixed();
+        @include nav(20px);
     }
 }
 

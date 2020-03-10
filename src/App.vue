@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue, Mixins } from 'vue-property-decorator';
-import VueHeader from '@/components/globals/TheHeader';
+import VueHeader from '@/components/globals/TheHeader.vue';
 import StoreMixin from '@/store/global';
 
 @Component({

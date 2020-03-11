@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 
         <script type="text/javascript">
-           if(!location.href.indexOf("localhost") && location.protocol == "http:") {
+           if(location.href.indexOf("localhost") < 0 && location.protocol == "http:") {
                 location.href = location.href.replace("http", "https");
            }
         </script>

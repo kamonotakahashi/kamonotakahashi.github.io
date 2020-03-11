@@ -4,7 +4,8 @@
     "prod": "webpack -p --mode production",
     "w": "webpack --watch --mode development",
     "s": "webpack-dev-server --watch --inline --mode development --open",
-    "heroku-postbuild": "npm run prod"
+    "heroku-postbuild": "npm run prod",
+    "build": "npm run prod"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

@@ -29,6 +29,9 @@
                     <router-link :to="nav.path" class="link">{{nav.name}}</router-link>
                 </li>
             </template>
+            <li>
+                --
+            </li>
         </ul>
     </nav>
 </template>

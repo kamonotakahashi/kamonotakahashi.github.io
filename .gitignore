@@ -9,7 +9,9 @@
 *.map
 
 package-lock.json
-
 node_modules/.cache/
 /node_modules
-/src/assets/images
+/dist/assets/js/*.js
+/dist/assets/css/*.css
+/dist/assets/img/*.png
+/dist/assets/img/*.jpg

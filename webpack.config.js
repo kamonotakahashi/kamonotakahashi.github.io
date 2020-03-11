@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
             publicPath: "/",
             filename: "js/main.js",
         },
-        devtool: IS_DEVELOPMENT ? 'inline-source-map' : 'none',
+        devtool: IS_DEVELOPMENT ? 'source-map' : false,
         module: {
             rules: [
                {

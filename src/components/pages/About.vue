@@ -62,7 +62,16 @@
                 </h1>
                 <div class="skill flex-three-column">
                     <div class="py-5 pr-5">
-                        <div class="text-center pl-4 py-10">プログラミング</div>
+                        <div class="text-center pl-4 py-10">
+                            <VueIcon
+                                src="program_icon.png"
+                                width="32"
+                                height="32"
+                                fontSize="17"
+                            >
+                                プログラミング
+                            </VueIcon>
+                        </div>
                         <dl>
                             <dt class="mt-5 mb-5">
                                 <VueBarChart percent="70" value="PHP" color="gray" />
@@ -91,7 +100,16 @@
                         </dl>
                     </div>
                     <div class="py-5 pr-5">
-                        <div class="text-center pl-4 py-10">システム設計</div>
+                        <div class="text-center pl-4 py-10">
+                            <VueIcon
+                                src="system_icon.png"
+                                width="32"
+                                height="32"
+                                fontSize="17"
+                            >
+                                システム設計
+                            </VueIcon>
+                        </div>
                         <dl>
                             <dt class="mt-5 mb-5">
                                 <VueBarChart percent="85" value="開発／開発" color="light-blue" />
@@ -108,7 +126,16 @@
                         </dl>
                     </div>
                     <div class="py-5">
-                        <div class="text-center pl-4 py-10">インフラストラクチャー</div>
+                        <div class="text-center pl-4 py-10">
+                            <VueIcon
+                                src="server_icon.png"
+                                width="32"
+                                height="32"
+                                fontSize="17"
+                            >
+                                インフラストラクチャー
+                            </VueIcon>
+                        </div>
                         <dl>
                             <dt class="mt-5 mb-5">
                                 <VueBarChart percent="65" value="Linux" color="light-blue" />
@@ -174,6 +201,7 @@ import VueTag from '@/components/parts/VueTag.vue';
 import VueLiner from '@/components/parts/VueLiner.vue';
 import VueButton from '@/components/parts/VueButton.vue';
 import VueBarChart from '@/components/parts/VueBarChart.vue';
+import VueIcon from '@/components/parts/VueIcon.vue';
 import moment from 'moment';
 
 const certificateStatus = ["active", "inactive"];
@@ -184,10 +212,13 @@ const certificateStatus = ["active", "inactive"];
     VueTag,
     VueLiner,
     VueButton,
-    VueBarChart
+    VueBarChart,
+    VueIcon
   },
 })
 export default class About extends Mixins(StoreMixin) {
+
+    private show: boolean = false;
 
     private profileMore: boolean = true;
     private certificateOnEnable: boolean[] = [];

@@ -1,9 +1,10 @@
 <template>
     <div class="chart-bar">
+        <transition>
         <div
             class="chart-bar__info"
             :class="[bgColor]"
-            :style="{ width : changeWidth, 'font-size': changeFontSize }"
+            :style="addStyle"
             :data-total="percent"
         >
             {{value}}
@@ -11,6 +12,7 @@
                 {{percent}}%
             </span>
         </div>
+        </transition>
     </div>
 </template>
 
@@ -28,16 +30,16 @@ export default class VueButton extends Vue {
     @Prop({ required: false, default: 'gray' }) color!: string;
     @Prop({ required: false, default: 14 }) fontSize!: number;
 
+    /* Created */
     private get bgColor(): string {
         return `chart-bar__bg-${this.color}`;
     }
 
-    private get changeWidth() :string {
-        return `${this.percent}%`;
-    }
-
-    private get changeFontSize() :string {
-        return `${this.fontSize}px`;
+    private get addStyle() :Object {
+        return {
+                'width' : `${this.percent}%`,
+                'font-size': `${this.fontSize}px`
+        };
     }
 
 }

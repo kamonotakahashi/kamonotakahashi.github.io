@@ -1,0 +1,14 @@
+.icon {
+    display: inline-flex;
+    position: relative;
+    &__img {
+        margin-right: 10px;
+        height: auto;
+    }
+    &__text {
+        height: auto;
+        line-height: normal;
+        padding-top: 2px;
+        text-shadow: 0 0 1px #ddd;
+    }
+}

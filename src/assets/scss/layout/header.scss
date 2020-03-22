@@ -78,21 +78,23 @@
         right: 0;
     }
     li {
-        text-align: center;
-        list-style: none;
-        display: inline-block;
-        width: 100%;
-        a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            transition: .3s;
-            height: auto;
-            padding: 15px;
-        }
-        a:hover {
-            background-color: $lightToneColor;
-            color: #696969;
+        &.block {
+            text-align: center;
+            list-style: none;
+            display: inline-block;
+            width: 100%;
+            a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                transition: .3s;
+                height: auto;
+                padding: 15px;
+            }
+            a:hover {
+                background-color: $lightToneColor;
+                color: #696969;
+            }
         }
     }
 }

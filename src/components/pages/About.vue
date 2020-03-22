@@ -4,16 +4,8 @@
             <div class="flex-two-column mt-20">
                 <div>
                     <div class="text-center valign-middle block-center pa-10">
-                        <!--VueImage
-                            src="/assets/img/szk_profile.jpg"
-                            type="avator"
-                            width="300"
-                            height="280"
-                            align="center"
-                            valign="middle"
-                        /-->
                         <VueImage
-                            src="https://my.royalcanin.jp/customize/img/knowledge/shiba_inu/img_kind.jpg"
+                            src="/assets/img/szk_profile.jpg"
                             type="avator"
                             width="300"
                             height="280"
@@ -34,8 +26,12 @@
                             {{profile(0)}}
                         </dd>
                         <template v-if="575 < clientWidth || profileMore">
-                            <VueLiner />
-                            <dd class="mt-15 line-height-normal">
+                            <VueLiner
+                                top="10"
+                                bottom="10"
+                                color="silver"
+                            />
+                            <dd class="line-height-normal">
                                 {{profile(1)}}
                             </dd>
                             <dd class="mt-15 line-height-normal">
@@ -57,14 +53,14 @@
                 </div>
             </div>
             <div class="mt-30">
-                <h1 class="sub-title-2 pt-5 pb-10">
+                <h1 class="sub-title-2 pt-10 pb-10">
                     <span class="text-size-32">S</span>kill
                 </h1>
                 <div class="skill flex-three-column">
                     <div class="py-5 pr-5">
                         <div class="text-center pl-4 py-10">
                             <VueIcon
-                                src="program_icon.png"
+                                src="/icon/program_icon.png"
                                 width="32"
                                 height="32"
                                 fontSize="17"
@@ -102,7 +98,7 @@
                     <div class="py-5 pr-5">
                         <div class="text-center pl-4 py-10">
                             <VueIcon
-                                src="system_icon.png"
+                                src="/icon/system_icon.png"
                                 width="32"
                                 height="32"
                                 fontSize="17"
@@ -128,7 +124,7 @@
                     <div class="py-5">
                         <div class="text-center pl-4 py-10">
                             <VueIcon
-                                src="server_icon.png"
+                                src="/icon/server_icon.png"
                                 width="32"
                                 height="32"
                                 fontSize="17"
@@ -163,7 +159,7 @@
                 </div>
             </div>
             <div class="mb-20">
-                <h1 class="sub-title-2 pt-5 pb-10">
+                <h1 class="sub-title-2 pt-10 pb-10">
                     <span class="text-size-32">C</span>ertificate
                 </h1>
                 <div class="certificate__table">
@@ -174,14 +170,23 @@
                     </dl>
                     <template v-for="(certificate, index) in certificates">
                         <dl class="certificate__table__body" :key="index">
-                            <dd class="text-center">{{certificate.name}}</dd>
+                            <dd class="text-center">
+                                <a href="#">{{certificate.name}}</a><!-- 資格の証明書をダウンロードできるようにする　S3から署名付きURLにて -->
+                            </dd>
                             <dd class="text-center">{{certificate.acquisitionDate}}</dd>
                             <dd class="text-center">
-                            {{
-                                certificateCheckExpire(certificate.acquisitionDate, certificate.period, certificate.year)
-                            }}</dd>
+                                <template v-if="certificateCheckExpire(certificate.acquisitionDate, certificate.period, certificate.year)">
+                                    <div class="text--success">active</div>
+                                </template>
+                                <template v-else>
+                                    <div class="text--fail">inactive</div>
+                                </template>
+                            </dd>
                         </dl>
                     </template>
+                </div>
+                <div class="text-right mt-5 text-size-13">
+                    ※「Certificate Name」の資格名をクリックすると、資格の証明書がダウンロードできます。
                 </div>
             </div>
         </div>
@@ -244,11 +249,11 @@ export default class About extends Mixins(StoreMixin) {
         this.profileMore = true;
     }
 
-    private certificateCheckExpire(date: Date, peried: boolean, year:number):string {
+    private certificateCheckExpire(date: Date, peried: boolean, year:number):boolean {
         if(!peried || moment().format("YYYY-MM") < moment(date).add(year, "year").format("YYYY-MM")) {
-            return certificateStatus[0];
+            return true;
         }
-        return certificateStatus[1];
+        return false;
     }
 
 }

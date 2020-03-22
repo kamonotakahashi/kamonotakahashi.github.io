@@ -3,4 +3,9 @@
     border-style: solid;
     border-color: $darkToneColor;
     height: 1px;
+    &.color {
+        &__silver {
+            border-color: #ccc;
+        }
+    }
 }

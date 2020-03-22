@@ -1,14 +1,16 @@
-.about-content {
+@mixin aboutContent($fontSize: 15px) {
     dl,dt,dd {
         width: 100%;
     }
     .certificate__table {
         &__head {
+            font-size: $fontSize;
             background-color: $darkToneColor;
             border: 1px #ccc solid;
             color: #fff;
         }
         &__body {
+            font-size: $fontSize;
             background: rgba(0, 0, 0, 0.1);
         }
         dl {
@@ -30,5 +32,28 @@
                 width: 20%;
             }
         }
+    }
+}
+
+
+
+//Desktop
+@include desktop {
+    .about-content {
+        @include aboutContent();
+    }
+}
+
+//Tablet
+@include tablet {
+    .about-content {
+        @include aboutContent();
+    }
+}
+
+//Mobile
+@include mobile {
+    .about-content {
+        @include aboutContent(12px);
     }
 }

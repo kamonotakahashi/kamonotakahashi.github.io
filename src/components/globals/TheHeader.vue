@@ -5,9 +5,9 @@
         </div>
         <ul class="nav__link">
             <template v-for="(nav, index) in header">
-                <li :key="index" class="active">
-                    <router-link :to="nav.path"> <!--$route.path-->
-                        <span>{{nav.name}}</span>
+                <li :key="index" :class="{ 'active' : nav.path == $route.path}">
+                    <router-link :to="nav.path">
+                        <span>{{nav.path == $route.path ? nav.activeName : nav.name}}</span>
                     </router-link>
                 </li>
                 <span v-if="nav.index !== header.length" :key="'_'+index" />

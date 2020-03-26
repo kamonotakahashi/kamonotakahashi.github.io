@@ -58,7 +58,12 @@
                 top: 40%;
                 transform: translateY(-40%);
             }
-            
+        }
+        &.active {
+            a {
+                color: #ddd;
+                background-color: #333333;
+            }
         }
     }
 }

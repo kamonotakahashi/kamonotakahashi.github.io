@@ -5,8 +5,10 @@
         </div>
         <ul class="nav__link">
             <template v-for="(nav, index) in header">
-                <li :key="index">
-                    <router-link :to="nav.path">{{nav.name}}</router-link>
+                <li :key="index" class="active">
+                    <router-link :to="nav.path"> <!--$route.path-->
+                        <span>{{nav.name}}</span>
+                    </router-link>
                 </li>
                 <span v-if="nav.index !== header.length" :key="'_'+index" />
             </template>

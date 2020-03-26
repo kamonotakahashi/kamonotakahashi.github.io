@@ -31,32 +31,34 @@
     display: flex;
     justify-content: space-around;
     width: $width;
+    height: 100%;
     color: #666;
-    span {
-        background: rgba(226,226,226,0.2);
-        position: relative;
-        top: 2px;
-        width: 1px;
-        height: 20px;
-    }
+    margin-right: 45px;
     li {
         list-style: none;
+        height: auto;
+        width: 100%;
         a {
             color: #fff;
-            display: inline-block;
-            position: relative;
+            display: block;
             transition: .3s;
             text-decoration: none;
             letter-spacing: 1px;
             font-weight: normal;
             font-size: 14px;
-            padding-left: 10px;
-            padding-right: 10px;
+            height: 100%;
+            text-align: center;
             &:hover {
                 color: #696969;
                 padding-bottom: 2px;
                 border-bottom: 2px #ccc solid;
             }
+            span {
+                position: relative;
+                top: 40%;
+                transform: translateY(-40%);
+            }
+            
         }
     }
 }

@@ -1,0 +1,37 @@
+@mixin content {
+    width: 100%;
+    height: auto;
+    &__headline {
+        width: 100%;
+        text-align: center;
+        &__title {
+            color: #696969;
+            font-size: 42px;
+            font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
+            letter-spacing: 5px;
+            text-shadow: 0 0 2px #ccc;
+            padding-top: 40px;
+        }
+    }
+}
+
+//Desktop
+@include desktop {
+    .content {
+        @include content();
+    }
+}
+
+//Tablet
+@include tablet {
+    .content {
+        @include content();
+    }
+}
+
+//Mobile
+@include mobile {
+    .content {
+        @include content();
+    }
+}

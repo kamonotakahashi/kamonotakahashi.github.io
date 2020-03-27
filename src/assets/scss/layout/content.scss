@@ -1,9 +1,11 @@
-@mixin container($width: 90%) {
+@mixin container($wrapWidth: 90%) {
     z-index: -1;
     width: 100%;
     margin-top: 55px;
     &__wrap {
-        width: $width;
+        &.fluid {
+            width: $wrapWidth;
+        }
         margin: 0 auto;
     }
 }

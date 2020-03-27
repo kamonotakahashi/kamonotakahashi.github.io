@@ -2,11 +2,9 @@
     <div>
         <VueHeader />
         <div class="container">
-            <div class="container__wrap">
                 <transition mode="out-in">
                     <router-view />
                 </transition>
-            </div>
         </div>
     </div>
 </template>

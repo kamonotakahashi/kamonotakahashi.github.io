@@ -15,6 +15,10 @@
             padding-bottom: 55px;
         }
     }
+    &__cardbox {
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
 //Desktop

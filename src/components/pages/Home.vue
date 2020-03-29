@@ -8,7 +8,38 @@
             </div>
             <div class="content__cardbox">
 
-                <VueCard></VueCard>
+                <VueCard
+                    height="300"
+                >
+                    <template v-slot:card-title>
+                        自己紹介
+                    </template>
+                    <template v-slot:card-image>
+                        -
+                    </template>
+                </VueCard>
+
+                <VueCard
+                    height="300"
+                >
+                    <template v-slot:card-title>
+                        自己紹介
+                    </template>
+                    <template v-slot:card-image>
+                        -
+                    </template>
+                </VueCard>
+
+                <VueCard
+                    height="300"
+                >
+                    <template v-slot:card-title>
+                        自己紹介
+                    </template>
+                    <template v-slot:card-image>
+                        -
+                    </template>
+                </VueCard>
 
             </div>
         </div>

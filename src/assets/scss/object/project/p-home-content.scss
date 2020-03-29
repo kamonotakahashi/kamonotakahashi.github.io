@@ -4,13 +4,15 @@
     &__headline {
         width: 100%;
         text-align: center;
+        background-color: #F7F8E0;
         &__title {
             color: #696969;
             font-size: 42px;
             font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
             letter-spacing: 5px;
             text-shadow: 0 0 2px #ccc;
-            padding-top: 40px;
+            padding-top: 55px;
+            padding-bottom: 55px;
         }
     }
 }

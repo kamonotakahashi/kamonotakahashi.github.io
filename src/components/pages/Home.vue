@@ -15,7 +15,14 @@
                         自己紹介
                     </template>
                     <template v-slot:card-image>
-                        -
+                        <VueIcon
+                            src="/icon/human_icon.png"
+                            width="84"
+                            height="84"
+                        />
+                    </template>
+                    <template v-slot:card-subtitle>
+                        a
                     </template>
                 </VueCard>
 
@@ -56,10 +63,12 @@ import StoreMixin from '@/store/global';
 
 //Components
 import VueCard from '@/components/parts/VueCard.vue';
+import VueIcon from '@/components/parts/VueIcon.vue';
 
 @Component({
   components: {
-    VueCard
+    VueCard,
+    VueIcon
   },
 })
 export default class About extends Mixins(StoreMixin) {

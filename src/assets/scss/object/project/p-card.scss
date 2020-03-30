@@ -4,24 +4,42 @@
         margin: 20px;
         background-color: #ddd;
         box-shadow: 0 0 2px #ccc;
+        border-radius: 20px;
         padding-top: 5px;
         padding-bottom: 5px;
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
 
         .card-content {
             height: auto;
             display: grid;
             justify-content: center;
-            position: relative;
-            top: 25%;
-            left: 50%;
-            -webkit-transform : translate(-50%,-50%);
-            transform : translate(-50%,-50%);
 
             &__title {
                 font-size: 24px;
+                padding-top: 35px;
+                padding-bottom: 15px;
+            }
+
+            &__image {
+                padding-top: 20px;
+                margin: 0 auto;
+            }
+
+            &__subtitle {
+                padding-top: 15px;
+                margin: 0 auto;
             }
 
         }
 
+        &:hover {
+            background-color: #666;
+        }
+
     }
+ 
 }

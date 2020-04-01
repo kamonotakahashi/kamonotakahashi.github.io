@@ -10,6 +10,7 @@
 
                 <VueCard
                     height="300"
+                    path="/about"
                 >
                     <template v-slot:card-title>
                         自己紹介
@@ -23,7 +24,7 @@
                     </template>
                     <template v-slot:card-subtitle>
                         <p>プロフィールやスキルスタック</p>
-                        <p></p>
+                        <p>取得資格など</p>
                     </template>
                 </VueCard>
 
@@ -42,12 +43,13 @@
                     </template>
                     <template v-slot:card-subtitle>
                         <p>これまでに作った公開可能なコード全集</p>
-                        <p>PHPやJavaScript、Cやアセンブリなど</p>
+                        <p>PHPやJavaScript、Cやアセンブリコードなど</p>
                     </template>
                 </VueCard>
 
                 <VueCard
                     height="300"
+                    path="/jobs"
                 >
                     <template v-slot:card-title>
                         仕事

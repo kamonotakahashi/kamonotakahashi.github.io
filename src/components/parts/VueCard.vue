@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card__wrap" :style="[addStyle]">
-            <a href="javascript: ;">
+            <a @click="pathTo(path)">
             <div class="card-content">
                 <div class="card-content__title">
                     <slot name="card-title"></slot>
@@ -28,11 +28,16 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class VueCard extends Vue {
 
     @Prop({ required: true }) height!: number;
+    @Prop({ required: false, default: '/index' }) path!: string;
 
     private get addStyle() :object {
         return {
             'height': `${this.height}px`
         };
+    }
+
+    private pathTo(path: string) :void {
+        this.$router.push(path);
     }
 
 }

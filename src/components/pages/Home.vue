@@ -22,7 +22,8 @@
                         />
                     </template>
                     <template v-slot:card-subtitle>
-                        a
+                        <p>プロフィールやスキルスタック</p>
+                        <p></p>
                     </template>
                 </VueCard>
 
@@ -30,10 +31,18 @@
                     height="300"
                 >
                     <template v-slot:card-title>
-                        自己紹介
+                        コーディング
                     </template>
                     <template v-slot:card-image>
-                        -
+                        <VueIcon
+                            src="/icon/terminal_icon.png"
+                            width="84"
+                            height="84"
+                        />
+                    </template>
+                    <template v-slot:card-subtitle>
+                        <p>これまでに作った公開可能なコード全集</p>
+                        <p>PHPやJavaScript、Cやアセンブリなど</p>
                     </template>
                 </VueCard>
 
@@ -41,10 +50,18 @@
                     height="300"
                 >
                     <template v-slot:card-title>
-                        自己紹介
+                        仕事
                     </template>
                     <template v-slot:card-image>
-                        -
+                        <VueIcon
+                            src="/icon/bag_icon.png"
+                            width="84"
+                            height="84"
+                        />
+                    </template>
+                    <template v-slot:card-subtitle>
+                        <p>Webアプリケーション開発</p>
+                        <p>サーバ構築、ネットワーク基盤の構築</p>
                     </template>
                 </VueCard>
 

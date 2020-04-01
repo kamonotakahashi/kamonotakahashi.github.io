@@ -1,5 +1,6 @@
 .card {
     width: 100%;
+    max-width: 440px;
     &__wrap {
         margin: 20px;
         background-color: #ddd;
@@ -15,31 +16,48 @@
 
         .card-content {
             height: auto;
-            display: grid;
-            justify-content: center;
-
+            width: 90%;
+            margin: 0 auto;
             &__title {
+                text-align: center;
                 font-size: 24px;
                 padding-top: 35px;
                 padding-bottom: 15px;
+                height: auto;
             }
 
             &__image {
-                padding-top: 20px;
-                margin: 0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+                height: 84px;
             }
 
             &__subtitle {
-                padding-top: 15px;
+                width: 90%;
                 margin: 0 auto;
+                border: 1px #ccc solid;
+                background-color: #fff;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 7px;
+                padding-right: 7px;
+                box-sizing: inherit;
+                box-shadow: 0 0 1px #ddd;
+                p {
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+                    height: 25px;
+                    font-size: 13px;
+                }
             }
 
         }
 
         &:hover {
-            background-color: #666;
+            opacity: 0.5;
         }
 
     }
- 
+
 }

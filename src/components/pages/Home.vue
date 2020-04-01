@@ -30,6 +30,7 @@
 
                 <VueCard
                     height="300"
+                    path="/code"
                 >
                     <template v-slot:card-title>
                         コーディング

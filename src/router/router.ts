@@ -14,10 +14,6 @@ export default new VueRouter({
       component: HomeComponent,
     },
     {
-      path: '/index',
-      component: HomeComponent,
-    },
-    {
       path: '/about',
       name: 'about',
       component: AboutComponent,

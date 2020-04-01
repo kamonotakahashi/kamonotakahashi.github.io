@@ -28,7 +28,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class VueCard extends Vue {
 
     @Prop({ required: true }) height!: number;
-    @Prop({ required: false, default: '/index' }) path!: string;
+    @Prop({ required: true }) path!: string;
 
     private get addStyle() :object {
         return {

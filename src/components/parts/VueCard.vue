@@ -1,7 +1,7 @@
 <template>
     <div class="card">
+        <a @click="pathTo(path)">
         <div class="card__wrap" :style="[addStyle]">
-            <a @click="pathTo(path)">
             <div class="card-content">
                 <div class="card-content__title">
                     <slot name="card-title"></slot>
@@ -13,8 +13,8 @@
                     <slot name="card-subtitle"></slot>
                 </div>
             </div>
-            </a>
         </div>
+        </a>
     </div>
 </template>
 

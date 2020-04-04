@@ -33,7 +33,7 @@
                     path="/code"
                 >
                     <template v-slot:card-title>
-                        コーディング
+                        システム／コード
                     </template>
                     <template v-slot:card-image>
                         <VueIcon

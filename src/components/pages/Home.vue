@@ -1,12 +1,20 @@
 <template>
     <div class="container__wrap">
         <div class="content">
-            <div class="content__headline">
+            <div class="content__headline portfolio">
                 <div class="content__headline__title">
-                    ポートフォリオ
+                    Portfolio
                 </div>
             </div>
-            <div class="content__cardbox">
+            <div class="content__headline code-and-system">
+                <div class="content__headline__title">
+                    Code And System
+                </div>
+            </div>
+            <div class="content__headline works">
+                <div class="content__headline__title">
+                    Works
+                </div>
             </div>
         </div>
     </div>

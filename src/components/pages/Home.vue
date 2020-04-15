@@ -7,67 +7,6 @@
                 </div>
             </div>
             <div class="content__cardbox">
-
-                <VueCard
-                    height="300"
-                    path="/about"
-                >
-                    <template v-slot:card-title>
-                        自己紹介
-                    </template>
-                    <template v-slot:card-image>
-                        <VueIcon
-                            src="/icon/human_icon.png"
-                            width="84"
-                            height="84"
-                        />
-                    </template>
-                    <template v-slot:card-subtitle>
-                        <p>プロフィールやスキルスタック</p>
-                        <p>取得資格など</p>
-                    </template>
-                </VueCard>
-
-                <VueCard
-                    height="300"
-                    path="/code"
-                >
-                    <template v-slot:card-title>
-                        システム／コード
-                    </template>
-                    <template v-slot:card-image>
-                        <VueIcon
-                            src="/icon/terminal_icon.png"
-                            width="84"
-                            height="84"
-                        />
-                    </template>
-                    <template v-slot:card-subtitle>
-                        <p>これまでに作った公開可能なコード全集</p>
-                        <p>PHPやJavaScript、Cやアセンブリコードなど</p>
-                    </template>
-                </VueCard>
-
-                <VueCard
-                    height="300"
-                    path="/jobs"
-                >
-                    <template v-slot:card-title>
-                        仕事
-                    </template>
-                    <template v-slot:card-image>
-                        <VueIcon
-                            src="/icon/bag_icon.png"
-                            width="84"
-                            height="84"
-                        />
-                    </template>
-                    <template v-slot:card-subtitle>
-                        <p>Webアプリケーション開発</p>
-                        <p>サーバ構築、ネットワーク基盤の構築</p>
-                    </template>
-                </VueCard>
-
             </div>
         </div>
     </div>

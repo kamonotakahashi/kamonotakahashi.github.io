@@ -1,7 +1,9 @@
 <template>
     <nav class="nav">
         <div class="nav__logo">
-            <div class="logo__title">SZK LABO</div>
+            <div class="logo__title">
+                <router-link to="/">SZK LABO</router-link>
+            </div>
         </div>
         <ul class="nav__link">
             <template v-for="(nav, index) in header">

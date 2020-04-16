@@ -1,19 +1,15 @@
 <template>
     <div class="container__wrap">
         <div class="content">
-            <div class="content__headline portfolio">
+            <div
+                class="content__headline"
+                v-for=" (line, index) in headline"
+                :key="index"
+                :class="line.className"
+                @click="clickActiveContent"
+            >
                 <div class="content__headline__title">
-                    Portfolio
-                </div>
-            </div>
-            <div class="content__headline code-and-system">
-                <div class="content__headline__title">
-                    Code And System
-                </div>
-            </div>
-            <div class="content__headline works">
-                <div class="content__headline__title">
-                    Works
+                    {{line.text}}
                 </div>
             </div>
         </div>
@@ -40,7 +36,15 @@ import VueIcon from '@/components/parts/VueIcon.vue';
 })
 export default class About extends Mixins(StoreMixin) {
 
+    private headline: { className: string, text: string }[] = [
+        { className: "portfolio", text: "Portfolio"},
+        { className: "code-and-system", text: "Code And System"},
+        { className: "works", text: "Works"}
+    ];
 
+    private clickActiveContent() :void {
+        console.log("A")
+    };
 
 }
 </script>

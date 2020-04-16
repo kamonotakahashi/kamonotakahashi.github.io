@@ -3,7 +3,7 @@
     height: 100vh;
     &__headline {
         width: 100%;
-        height: 125px;
+        height: 100px;
         &.portfolio {
             background-color: #f4f0e6;
         }
@@ -13,15 +13,25 @@
         &.works {
             background-color: #d4d4dc;
         }
+
         &__title {
-            text-align: center;
             color: #696969;
-            font-size: 42px;
             font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
             letter-spacing: 5px;
             text-shadow: 0 0 2px #ccc;
             padding-top: 5px;
             padding-bottom: 5px;
+
+            &.active {
+                text-align: left;
+                font-size: 18px;
+            }
+
+            &.inactive {
+                text-align: center;
+                font-size: 42px;
+            }
+
         }
     }
     &__cardbox {

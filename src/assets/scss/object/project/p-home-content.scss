@@ -27,16 +27,30 @@
             padding-bottom: 5px;
             text-align: center;
             font-size: 42px;
+            position: relative;
+            padding: 25px;
 
             &.active {
                 padding-top: 5px;
                 padding-left: 4px;
                 padding-bottom: 5px;
+                padding-right: 4px;
                 text-align: left;
                 font-size: 18px;
             }
 
         }
+
+        &__entry {
+            display: block;
+            padding-left: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            &.active {
+                display: block;
+            }
+        }
+
     }
     &__cardbox {
         width: 100%;

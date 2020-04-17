@@ -4,7 +4,7 @@
         <div class="portfolio__wrap">
             <VueCard height="250">
                 <template v-slot:card-title>
-                    サイト
+                    あろはサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
@@ -13,7 +13,7 @@
 
             <VueCard height="250">
                 <template v-slot:card-title>
-                    サイト
+                    いろいろサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
@@ -22,7 +22,7 @@
 
             <VueCard height="250">
                 <template v-slot:card-title>
-                    サイト
+                    うろうろサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />

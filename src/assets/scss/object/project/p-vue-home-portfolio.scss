@@ -1,5 +1,8 @@
 .portfolio {
+    padding-top: 5px;
+    padding-bottom: 5px;
     &__wrap {
         display: flex;
+        justify-content: space-around;
     }
 }

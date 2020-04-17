@@ -1,7 +1,35 @@
 <template>
-    <div>
+    <div class="portfolio">
 
-        s
+        <div class="portfolio__wrap">
+            <VueCard height="250">
+                <template v-slot:card-title>
+                    サイト
+                </template>
+                <template v-slot:card-image>
+                    <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
+                </template>
+            </VueCard>
+
+            <VueCard height="250">
+                <template v-slot:card-title>
+                    サイト
+                </template>
+                <template v-slot:card-image>
+                    <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
+                </template>
+            </VueCard>
+
+            <VueCard height="250">
+                <template v-slot:card-title>
+                    サイト
+                </template>
+                <template v-slot:card-image>
+                    <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
+                </template>
+            </VueCard>
+
+        </div>
 
     </div>
 </template>
@@ -11,8 +39,13 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import VueCard from '@/components/parts/VueCard.vue';
 
-@Component
+@Component({
+    components: {
+        VueCard
+    }
+})
 export default class VueHomePortfolio extends Vue {
 
 }

@@ -2,10 +2,9 @@
     width: 100%;
     &__wrap {
         margin: 20px;
-        background-color: #ddd;
+        background-color: #fff;
         box-shadow: 0 0 2px #ccc;
-        border-radius: 20px;
-        border: 1px #eee solid;
+        border-radius: 4px;
         padding-top: 5px;
         padding-bottom: 5px;
 
@@ -16,39 +15,21 @@
 
         .card-content {
             height: auto;
-            width: 90%;
+            width: 100%;
+            min-width: 180px;
             margin: 0 auto;
             &__title {
-                text-align: center;
-                font-size: 24px;
-                padding-top: 35px;
-                padding-bottom: 15px;
-                height: auto;
+                font-size: 16px;
+                height: 25px;
+                line-height: normal;
+                padding-left: 8px;
+                padding-right: 8px;
             }
 
             &__image {
-                margin-top: 20px;
-                margin-bottom: 20px;
+                padding-left: 8px;
+                padding-right: 8px;
                 text-align: center;
-                height: 84px;
-            }
-
-            &__subtitle {
-                width: 90%;
-                margin: 0 auto;
-                border: 1px #ccc solid;
-                background-color: #fff;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 7px;
-                padding-right: 7px;
-                box-sizing: inherit;
-                box-shadow: 0 0 1px #ddd;
-                p {
-                    line-height: inherit;
-                    height: 25px;
-                    font-size: 13px;
-                }
             }
 
         }

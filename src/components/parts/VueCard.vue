@@ -9,8 +9,16 @@
                     <slot name="card-title"></slot>
                 </div>
                 <div class="card-content__action">
-                    <i class="fas fa-thumbs-up"></i>
-                    <i class="fas fa-thumbs-down"></i>
+                    <div class="card-content__action-group">
+                        <dl>
+                            <dd>
+                                <i class="fas fa-thumbs-up fa-thumbs-good"></i><span>{{goodCount}}</span>
+                            </dd>
+                            <dd>
+                                <i class="fas fa-thumbs-down fa-thumbs-bad"></i><span>{{badCount}}</span>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,6 +26,20 @@
 </template>
 
 <style lang="scss" scoped>
+.fa-thumbs-good {
+    color: #666;
+}
+.fa-thumbs-good:hover {
+    color: #74DF00;
+    cursor: pointer;
+}
+.fa-thumbs-bad {
+    color: #666;
+}
+.fa-thumbs-bad:hover {
+    color: #FE2E2E;
+    cursor: pointer;
+}
 </style>
 
 <script lang="ts">
@@ -28,6 +50,8 @@ export default class VueCard extends Vue {
 
     @Prop({ required: true }) height!: number;
     @Prop({ required: true }) path!: string;
+    @Prop({ required: false, default: 0 }) goodCount!: number;
+    @Prop({ required: false, default: 0 }) badCount!: number;
 
     private get addStyle() :object {
         return {

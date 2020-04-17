@@ -2,7 +2,7 @@
     <div class="portfolio">
 
         <div class="portfolio__wrap">
-            <VueCard height="260" path="/">
+            <VueCard height="260" path="/" goodCount="0" badCount="0">
                 <template v-slot:card-title>
                     あろはサイト
                 </template>
@@ -11,7 +11,7 @@
                 </template>
             </VueCard>
 
-            <VueCard height="250" path="/">
+            <VueCard height="260" path="/">
                 <template v-slot:card-title>
                     いろいろサイト
                 </template>
@@ -20,7 +20,7 @@
                 </template>
             </VueCard>
 
-            <VueCard height="250" path="/">
+            <VueCard height="260" path="/">
                 <template v-slot:card-title>
                     うろうろサイト
                 </template>

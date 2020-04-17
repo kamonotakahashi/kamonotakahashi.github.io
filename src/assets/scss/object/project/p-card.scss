@@ -28,6 +28,19 @@
 
             &__action {
                 text-align: right;
+                &-group {
+                    dl {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                    dd {
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        span {
+                            margin-left: 4px;
+                        }
+                    }
+                }
             }
 
         }

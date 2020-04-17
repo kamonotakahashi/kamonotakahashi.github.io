@@ -3,13 +3,14 @@
         <div class="card__wrap" :style="[addStyle]">
             <div class="card-content">
                 <div class="card-content__image">
-                    <slot name="card-image"></slot>
+                    <a :href="path"><slot name="card-image"></slot></a>
                 </div>
                 <div class="card-content__title">
                     <slot name="card-title"></slot>
                 </div>
                 <div class="card-content__action">
-                    -
+                    <i class="fas fa-thumbs-up"></i>
+                    <i class="fas fa-thumbs-down"></i>
                 </div>
             </div>
         </div>

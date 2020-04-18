@@ -42,7 +42,7 @@ export default class About extends Mixins(StoreMixin) {
     /* data */
     private headline: { className: string, text: string, vueExtendInstance: any  }[] = [
         { className: "portfolio", text: "Portfolio", vueExtendInstance: VueHomePortfolio},
-        { className: "code-and-system", text: "Code And System", vueExtendInstance: VueHomePortfolio},
+        { className: "code-and-system", text: "Create", vueExtendInstance: VueHomePortfolio},
         { className: "works", text: "Works", vueExtendInstance: VueHomePortfolio}
     ];
 

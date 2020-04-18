@@ -4,17 +4,33 @@
     &__headline {
         width: 100%;
         &.portfolio {
+            cursor: pointer;
             background-color: #f4f0e6;
+            &:hover {
+                opacity: 0.5;
+            }
         }
         &.code-and-system {
+            cursor: pointer;
             background-color: #D0DFE6;
+            &:hover {
+                opacity: 0.5;
+            }
         }
         &.works {
+            cursor: pointer;
             background-color: #d4d4dc;
+            &:hover {
+                opacity: 0.5;
+            }
         }
 
         &.active {
+            cursor: auto;
             height: auto;
+            &:hover {
+                opacity: 1;
+            }
         }
 
         &__title {
@@ -34,7 +50,7 @@
                 padding-left: 8px;
                 padding-bottom: 5px;
                 padding-right: 8px;
-                text-align: left;
+                text-align: center;
                 font-size: 18px;
             }
 

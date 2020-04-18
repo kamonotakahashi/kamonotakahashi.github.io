@@ -10,7 +10,7 @@
             </p>
 
             <template v-for="(item, index) in getFirebase">
-            <template v-if="index < portfolioLimitCount">
+            <template v-if="index < getContentCardLength() ">
             <VueSiteBoxCard
                 height="260"
                 :path="item.path"
@@ -52,7 +52,6 @@
             </template>
 
         </div>
-
     </div>
 </template>
 
@@ -64,6 +63,7 @@ import { Vue, Component, Mixins, Watch } from 'vue-property-decorator';
 import StoreMixin from '@/store/global';
 
 import { ProfilePortfolio } from '@/types/portfolio';
+import { Client } from '@/types/client';
 
 import VueSiteBoxCard from '@/components/parts/VueSiteBoxCard.vue';
 import VueButton from '@/components/parts/VueButton.vue';
@@ -78,12 +78,20 @@ export default class VieHomePortfolio extends Mixins(StoreMixin) {
 
     /* data */
     private portfolio :ProfilePortfolio[] = [];
-    private portfolioLimitCount :number = 3;
 
     /* Watch */
     @Watch('_firebase', { deep: true })
     private onFirebaseResponseChange(_portfolio: ProfilePortfolio[]) {
         this.portfolio = _portfolio;
+    }
+
+    private getContentCardLength() :number {
+        if(1000 < this._client.window_width) {
+            return 3;
+        } else if( 700 < this._client.window_width) {
+            return 2;
+        }
+        return 1;
     }
 
     private get getFirebase() :ProfilePortfolio[] {

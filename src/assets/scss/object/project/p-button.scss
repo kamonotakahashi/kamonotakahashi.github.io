@@ -6,11 +6,15 @@
         background-color: $darkToneColor;
     }
     &.animation {
-        animation: anime1 5s ease -2s infinite alternate;
+        //animation: anime1 5s ease -2s infinite alternate;
     }
 
     @for $i from 1 through 100 {
         &.w-#{$i} { width: #{$i}#{'%'} };
+    }
+
+    @for $i from 1 through 100 {
+        &.h-#{$i} { height: #{$i}#{'%'} };
     }
 
 }

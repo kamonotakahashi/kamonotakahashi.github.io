@@ -2,7 +2,7 @@
 import Vue from 'vue'
 
 //Parent Vue File
-import App from "@/App";
+import App from "@/App.vue";
 
 //SPA Route List
 import router from '@/router/router';

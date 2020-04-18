@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn" :class="colorType" @click="clickEvent">
+        <button class="btn" :class="addClass" @click="clickEvent">
             <slot></slot>
         </button>
     </div>
@@ -17,9 +17,10 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class VueButton extends Vue {
     @Prop({ required: false, default: 'light' }) type!: string;
     @Prop({ required: false, default: '100' }) width!: number;
+    @Prop({ required: false, default: '100' }) height!: number;
 
-    get colorType() :string[] {
-        return [this.type, `w-${this.width}`];
+    get addClass() :string[] {
+        return [this.type, `w-${this.width}`, `h-${this.height}`];
     }
 
     private clickEvent(): void {

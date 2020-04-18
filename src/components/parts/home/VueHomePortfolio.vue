@@ -2,32 +2,41 @@
     <div class="portfolio">
 
         <div class="portfolio__wrap">
-            <VueCard height="260" path="/" goodCount="0" badCount="0">
+
+            <p>
+                <VueButton type="dark">＜</VueButton>
+            </p>
+
+            <VueSiteBoxCard height="260" path="/" goodCount="100" badCount="0" times="2020/04/10">
                 <template v-slot:card-title>
                     あろはサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
                 </template>
-            </VueCard>
+            </VueSiteBoxCard>
 
-            <VueCard height="260" path="/">
+            <VueSiteBoxCard height="260" path="/" times="2020/04/10">
                 <template v-slot:card-title>
                     いろいろサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
                 </template>
-            </VueCard>
+            </VueSiteBoxCard>
 
-            <VueCard height="260" path="/">
+            <VueSiteBoxCard height="260" path="/" times="2020/04/10">
                 <template v-slot:card-title>
                     うろうろサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
                 </template>
-            </VueCard>
+            </VueSiteBoxCard>
+
+            <p>
+                <VueButton type="dark" height="100">＞</VueButton>
+            </p>
 
         </div>
 
@@ -39,14 +48,18 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import VueCard from '@/components/parts/VueCard.vue';
+import VueSiteBoxCard from '@/components/parts/VueSiteBoxCard.vue';
+import VueButton from '@/components/parts/VueButton.vue';
 
 @Component({
     components: {
-        VueCard
+        VueSiteBoxCard,
+        VueButton
     }
 })
 export default class VueHomePortfolio extends Vue {
+
+    
 
 }
 </script>

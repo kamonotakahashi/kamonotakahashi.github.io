@@ -12,9 +12,10 @@
                     <div class="card-content__action-group">
                         <dl>
                             <dd>
-                                <i class="fas fa-thumbs-up fa-thumbs-good"></i><span>{{goodCount}}</span>
+                                <time>{{ getPublishedDate() }}</time>
                             </dd>
                             <dd>
+                                <i class="fas fa-thumbs-up fa-thumbs-good"></i><span>{{goodCount}}</span>
                                 <i class="fas fa-thumbs-down fa-thumbs-bad"></i><span>{{badCount}}</span>
                             </dd>
                         </dl>
@@ -44,9 +45,10 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import moment from 'moment';
 
 @Component
-export default class VueCard extends Vue {
+export default class VueSiteBoxCard extends Vue {
 
     @Prop({ required: true }) height!: number;
     @Prop({ required: true }) path!: string;
@@ -61,6 +63,10 @@ export default class VueCard extends Vue {
 
     private pathTo(path: string) :void {
         this.$router.push(path);
+    }
+
+    private getPublishedDate(date: Date) :string {
+        return moment(date).format("YYYY/MM/DD");
     }
 
 }

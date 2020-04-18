@@ -45,8 +45,12 @@
                     dd {
                         margin-left: 5px;
                         margin-right: 5px;
+                        i:nth-child(1) {
+                            padding-right: 5px;
+                        }
                         span {
                             margin-left: 4px;
+                            white-space: nowrap;
                         }
                         time {
                             color: #666;

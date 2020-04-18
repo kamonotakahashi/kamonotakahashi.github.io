@@ -7,30 +7,63 @@
                 <VueButton type="dark">＜</VueButton>
             </p>
 
-            <VueSiteBoxCard height="260" path="/" goodCount="100" badCount="0" times="2020/04/10">
+            <VueSiteBoxCard height="260" path="/" goodCount="100" badCount="0">
                 <template v-slot:card-title>
                     あろはサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
                 </template>
+                <template v-slot:card-action>
+                    <dl>
+                        <dd>
+                            <time>2020/04/10</time>
+                        </dd>
+                        <dd>
+                            <i class="fas fa-thumbs-up fa-thumbs-good"></i>
+                            <i class="fas fa-thumbs-down fa-thumbs-bad"></i>
+                        </dd>
+                    </dl>
+                </template>
             </VueSiteBoxCard>
 
-            <VueSiteBoxCard height="260" path="/" times="2020/04/10">
+            <VueSiteBoxCard height="260" path="/">
                 <template v-slot:card-title>
                     いろいろサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
                 </template>
+                <template v-slot:card-action>
+                    <dl>
+                        <dd>
+                            <time>2020/04/10</time>
+                        </dd>
+                        <dd>
+                            <i class="fas fa-thumbs-up fa-thumbs-good"></i>
+                            <i class="fas fa-thumbs-down fa-thumbs-bad"></i>
+                        </dd>
+                    </dl>
+                </template>
             </VueSiteBoxCard>
 
-            <VueSiteBoxCard height="260" path="/" times="2020/04/10">
+            <VueSiteBoxCard height="260" path="/">
                 <template v-slot:card-title>
                     うろうろサイト
                 </template>
                 <template v-slot:card-image>
                     <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
+                </template>
+                <template v-slot:card-action>
+                    <dl>
+                        <dd>
+                            <time>2020/04/10</time>
+                        </dd>
+                        <dd>
+                            <i class="fas fa-thumbs-up fa-thumbs-good"></i>
+                            <i class="fas fa-thumbs-down fa-thumbs-bad"></i>
+                        </dd>
+                    </dl>
                 </template>
             </VueSiteBoxCard>
 
@@ -59,7 +92,7 @@ import VueButton from '@/components/parts/VueButton.vue';
 })
 export default class VueHomePortfolio extends Vue {
 
-    
+
 
 }
 </script>

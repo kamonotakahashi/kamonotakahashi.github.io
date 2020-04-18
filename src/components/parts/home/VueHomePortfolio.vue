@@ -80,7 +80,9 @@
 </style>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Vue, Component, Mixins, Watch } from 'vue-property-decorator';
+import StoreMixin from '@/store/global';
+
 import VueSiteBoxCard from '@/components/parts/VueSiteBoxCard.vue';
 import VueButton from '@/components/parts/VueButton.vue';
 
@@ -90,9 +92,12 @@ import VueButton from '@/components/parts/VueButton.vue';
         VueButton
     }
 })
-export default class VueHomePortfolio extends Vue {
+export default class About extends Mixins(StoreMixin) {
 
-
+    created() {
+        // firebase ロード
+        this.setFirebase("portfolio");
+    }
 
 }
 </script>

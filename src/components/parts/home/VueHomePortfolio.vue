@@ -3,21 +3,36 @@
 
         <div class="portfolio__wrap">
 
+            <template v-if="getFirebase">
+
             <p>
                 <VueButton type="dark">＜</VueButton>
             </p>
 
-            <VueSiteBoxCard height="260" path="/" goodCount="100" badCount="0">
+            <template v-for="(item, index) in getFirebase">
+            <template v-if="index < portfolioLimitCount">
+            <VueSiteBoxCard
+                height="260"
+                :path="item.path"
+                :godCount="item.goodCount"
+                :badCount="item.badCount"
+                :key="index"
+                :published="item.publish"
+            >
                 <template v-slot:card-title>
-                    あろはサイト
+                    {{item.siteName}}
                 </template>
                 <template v-slot:card-image>
-                    <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
+                    <img
+                        :src="item.image.url"
+                        :width="`${item.image.width}%`"
+                        :height="item.image.height"
+                    />
                 </template>
                 <template v-slot:card-action>
                     <dl>
                         <dd>
-                            <time>2020/04/10</time>
+                            <time>{{item.createdDate}}</time>
                         </dd>
                         <dd>
                             <i class="fas fa-thumbs-up fa-thumbs-good"></i>
@@ -27,49 +42,14 @@
                 </template>
             </VueSiteBoxCard>
 
-            <VueSiteBoxCard height="260" path="/">
-                <template v-slot:card-title>
-                    いろいろサイト
-                </template>
-                <template v-slot:card-image>
-                    <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
-                </template>
-                <template v-slot:card-action>
-                    <dl>
-                        <dd>
-                            <time>2020/04/10</time>
-                        </dd>
-                        <dd>
-                            <i class="fas fa-thumbs-up fa-thumbs-good"></i>
-                            <i class="fas fa-thumbs-down fa-thumbs-bad"></i>
-                        </dd>
-                    </dl>
-                </template>
-            </VueSiteBoxCard>
-
-            <VueSiteBoxCard height="260" path="/">
-                <template v-slot:card-title>
-                    うろうろサイト
-                </template>
-                <template v-slot:card-image>
-                    <img src="https://placehold.jp/150x150.png" width="100%" height="200" />
-                </template>
-                <template v-slot:card-action>
-                    <dl>
-                        <dd>
-                            <time>2020/04/10</time>
-                        </dd>
-                        <dd>
-                            <i class="fas fa-thumbs-up fa-thumbs-good"></i>
-                            <i class="fas fa-thumbs-down fa-thumbs-bad"></i>
-                        </dd>
-                    </dl>
-                </template>
-            </VueSiteBoxCard>
+            </template>
+            </template>
 
             <p>
                 <VueButton type="dark" height="100">＞</VueButton>
             </p>
+
+            </template>
 
         </div>
 
@@ -83,6 +63,8 @@
 import { Vue, Component, Mixins, Watch } from 'vue-property-decorator';
 import StoreMixin from '@/store/global';
 
+import { ProfilePortfolio } from '@/types/portfolio';
+
 import VueSiteBoxCard from '@/components/parts/VueSiteBoxCard.vue';
 import VueButton from '@/components/parts/VueButton.vue';
 
@@ -92,11 +74,28 @@ import VueButton from '@/components/parts/VueButton.vue';
         VueButton
     }
 })
-export default class About extends Mixins(StoreMixin) {
+export default class VieHomePortfolio extends Mixins(StoreMixin) {
+
+    /* data */
+    private portfolio :ProfilePortfolio[] = [];
+    private portfolioLimitCount :number = 3;
+
+    /* Watch */
+    @Watch('_firebase', { deep: true })
+    private onFirebaseResponseChange(_portfolio: ProfilePortfolio[]) {
+        this.portfolio = _portfolio;
+    }
+
+    private get getFirebase() :ProfilePortfolio[] {
+        return this.portfolio;
+    }
 
     created() {
         // firebase ロード
         this.setFirebase("portfolio");
+        this.$nextTick( () => {
+            this.portfolio = this._firebase;
+        });
     }
 
 }

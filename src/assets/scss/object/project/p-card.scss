@@ -1,7 +1,8 @@
 .card {
     width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
+    max-width: 320px;
+    //margin-left: 15px;
+    //margin-right: 15px;
     &__wrap {
         background-color: #fff;
         box-shadow: 0 0 2px #ccc;
@@ -10,6 +11,7 @@
         padding-bottom: 5px;
         padding-left: 8px;
         padding-right: 8px;
+        position: relative;
 
         .card-content {
             height: auto;
@@ -26,13 +28,26 @@
                 text-align: center;
                 overflow:hidden;
                 img {
-                    transition:0.1s all;
+                    transition: 0.1s all;
                 }
                 img:hover {
                     opacity: 0.6;
-                    transform:scale(1.2,1.2);
-                    transition:0.1s all;
+                    transform: scale(1.2,1.2);
+                    transition: 0.1s all;
                 }
+
+                &.private {
+                    background-color: #bbb;
+                    img {
+                        opacity: 0.2;
+                        transition: none;
+                    }
+                    img:hover {
+                        transform: none;
+                        transition: none;
+                    }
+                }
+
             }
 
             &__action {
@@ -61,6 +76,26 @@
             }
 
         }
+
+        .card-private {
+            max-width: 64px;
+            max-height: 64px;
+            position: absolute;
+            top: calc(50% - 64px);
+            left: calc(50% - 32px);
+            right: 0;
+            bottom: 0;
+
+            &__text {
+                color: #fff;
+                text-align: center;
+                padding: 3px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+        }
+
     }
 
 }

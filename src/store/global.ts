@@ -1,5 +1,6 @@
 import { Vue, Component } from "vue-property-decorator";
 import { Client } from '@/types/client';
+import { ProfilePortfolio } from '@/types/portfolio';
 
 /* Firebase */
 import firebase from 'firebase/app';
@@ -11,24 +12,7 @@ firebase.initializeApp(firebaseConfig);
 
 type State = {
     client : Client,
-    portfolio : ProfilePortfolio
-}
-
-type Image = {
-    url: string,
-    width: number,
-    height: number
-}
-
-type ProfilePortfolio = {
-    id?: number,
-    siteName?: string,
-    path?: string,
-    image?: Image,
-    createdDate?: Date,
-    publish?: Boolean,
-    goodCount?: number,
-    badCount?: number
+    portfolio : ProfilePortfolio[]
 }
 
 const state = Vue.observable<State>({
@@ -37,7 +21,7 @@ const state = Vue.observable<State>({
         window_height: 0,
         scroll_top: 0,
     },
-    portfolio: {}
+    portfolio: []
 });
 
 const firebaseDB = firebase.database();
@@ -56,7 +40,7 @@ export default class StoreMixin extends Vue {
     }
 
     /* Firebase */
-    protected get _firebase() {
+    protected get _firebase() :ProfilePortfolio[] {
         return state.portfolio;
     }
     protected setFirebase(objectPathName: string) :any {
@@ -64,10 +48,11 @@ export default class StoreMixin extends Vue {
             firebaseDB.ref(objectPathName).once("value").then( (res:any) => {
                 if(res.val()) {
                     res.val().forEach( (item:ProfilePortfolio) => {
-                        console.log(item);
+                        if( !state.portfolio.find( (value:ProfilePortfolio) => value.id == item.id) ) {
+                            state.portfolio.push(item);
+                        }
                     });
                 }
-                console.log(state.portfolio);
             });
         } catch (err) {
             throw err;

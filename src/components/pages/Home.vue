@@ -31,6 +31,7 @@ import StoreMixin from '@/store/global';
 //Components
 import VueIcon from '@/components/parts/VueIcon.vue';
 import VueHomePortfolio from '@/components/parts/home/VueHomePortfolio.vue';
+import VueHomeSelfMadeContent from '@/components/parts/home/VueHomeSelfMadeContent.vue';
 
 @Component({
   components: {
@@ -42,7 +43,7 @@ export default class About extends Mixins(StoreMixin) {
     /* data */
     private headline: { className: string, text: string, vueExtendInstance: any  }[] = [
         { className: "portfolio", text: "Portfolio", vueExtendInstance: VueHomePortfolio},
-        { className: "code-and-system", text: "Self", vueExtendInstance: VueHomePortfolio},
+        { className: "code-and-system", text: "Self", vueExtendInstance: VueHomeSelfMadeContent},
         { className: "works", text: "Works", vueExtendInstance: VueHomePortfolio}
     ];
 

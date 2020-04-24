@@ -6,7 +6,7 @@
             <template v-if="getFirebase">
 
             <p>
-                <VueButton type="dark">＜</VueButton>
+                <VueButton type="dark" @event="prevItem()">＜</VueButton>
             </p>
 
             <template v-for="(item, index) in getFirebase">
@@ -46,7 +46,7 @@
             </template>
 
             <p>
-                <VueButton type="dark" height="100">＞</VueButton>
+                <VueButton type="dark" @event="nextItem()">＞</VueButton>
             </p>
 
             </template>
@@ -85,6 +85,7 @@ export default class VieHomePortfolio extends Mixins(StoreMixin) {
         this.portfolio = _portfolio;
     }
 
+    /* Methods */
     private getContentCardLength() :number {
         if(1000 < this._client.window_width) {
             return 3;
@@ -93,11 +94,19 @@ export default class VieHomePortfolio extends Mixins(StoreMixin) {
         }
         return 1;
     }
+    private prevItem() :void {
+        this.portfolio.push(this.portfolio.shift()!);
+    }
+    private nextItem() :void {
+        this.portfolio.unshift(this.portfolio.pop()!);
+    }
 
+    /* Computed */
     private get getFirebase() :ProfilePortfolio[] {
         return this.portfolio;
     }
 
+    /* Created */
     created() {
         // firebase ロード
         this.setFirebase("portfolio");

@@ -1,18 +1,12 @@
 <template>
     <div class="container__wrap">
         <div class="content">
-            <div
-                class="content__headline"
-                v-for=" (line, index) in headline"
-                :key="index"
-                :class="[line.className, { active : selectHeadlineContentNumber == index }]"
-                :data-column-name="line.className"
-                @click="selectHeadlineContentNumber !== index ? clickActiveContent(index, line.vueExtendInstance) : false"
-            >
-                <div class="content__headline__title" :class="{ active : selectHeadlineContentNumber == index }">
-                    {{line.text}}
+            <div class="content__headline portfolio">
+                <div class="content__headline__title">
+                    <div class="content__headline__title-wrap">portfolio</div>
                 </div>
-                <div class="content__headline__entry" :class="{ active : selectHeadlineContentNumber == index }" v-show="selectHeadlineContentNumber == index">
+                <div class="content__headline__entry">
+                    <VueHomePortfolio></VueHomePortfolio>
                 </div>
             </div>
         </div>
@@ -29,48 +23,15 @@ import { Vue, Component, Mixins, Watch } from 'vue-property-decorator';
 import StoreMixin from '@/store/global';
 
 //Components
-import VueIcon from '@/components/parts/VueIcon.vue';
 import VueHomePortfolio from '@/components/parts/home/VueHomePortfolio.vue';
 import VueHomeSelfMadeContent from '@/components/parts/home/VueHomeSelfMadeContent.vue';
 
 @Component({
-  components: {
-    VueIcon
-  },
+    components: {
+        VueHomePortfolio
+    }
 })
 export default class About extends Mixins(StoreMixin) {
-
-    /* data */
-    private headline: { className: string, text: string, vueExtendInstance: any  }[] = [
-        { className: "portfolio", text: "Portfolio", vueExtendInstance: VueHomePortfolio},
-        { className: "code-and-system", text: "Self", vueExtendInstance: VueHomeSelfMadeContent},
-        { className: "works", text: "Works", vueExtendInstance: VueHomePortfolio}
-    ];
-
-    private selectHeadlineContentNumber :number = 0;
-
-    /* computed */
-    private clickActiveContent(index: number, instance: any) :void {
-
-        this.selectHeadlineContentNumber = index;
-        var ComponentClass = Vue.extend(instance);
-        var componentInstance = new ComponentClass();
-        var contentInstance = document.getElementsByClassName("content__headline")[index];
-        contentInstance.getElementsByClassName("content__headline__entry")[0].innerHTML = '';
-        contentInstance.getElementsByClassName("content__headline__entry")[0].append(componentInstance.$mount().$el);
-
-    };
-
-    /* mounted */
-    mounted() {
-
-        //開いた時にデフォルトの選択コンテンツを動的バインド
-        this.clickActiveContent(
-            this.selectHeadlineContentNumber,
-            this.headline[this.selectHeadlineContentNumber].vueExtendInstance
-        );
-
-    };
 
 }
 </script>

@@ -106,7 +106,7 @@ module.exports = (env, argv) => {
             historyApiFallback: true,
         },
         resolve: {
-            extensions: ['.ts', '.vue', '.scss', '.json'],
+            extensions: ['.ts', '.js', '.vue', '.scss', '.json'],
             alias: {
               '@': path.resolve(__dirname, 'src')
             }

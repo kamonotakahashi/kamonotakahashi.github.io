@@ -33,7 +33,7 @@
         <link href="/assets/css/style.css" rel="stylesheet" />
 
         <script type="text/javascript">
-           if(location.href.indexOf("localhost") < 0 && location.protocol == "http:") {
+           if(location.href.indexOf("localhost") < 0 && location.href.indexOf("127.0.0.1") < 0 && location.protocol == "http:") {
                 location.href = location.href.replace("http", "https");
            }
         </script>

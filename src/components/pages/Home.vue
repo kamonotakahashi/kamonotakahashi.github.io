@@ -67,7 +67,7 @@ export default class About extends Mixins(StoreMixin) {
         {
             className: "works",
             title: "Works",
-            subTitle: "ワーク",
+            subTitle: "ワークス",
             vueExtendInstance: VueHomeSelfMadeContent
         }
     ];

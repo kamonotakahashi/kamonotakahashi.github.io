@@ -106,6 +106,10 @@ export default class VieHomePortfolio extends Mixins(StoreMixin) {
         return this.portfolio;
     }
 
+    private get clientWidth():number {
+        return this._client.window_width;
+    };
+
     /* Created */
     created() {
         // firebase ロード

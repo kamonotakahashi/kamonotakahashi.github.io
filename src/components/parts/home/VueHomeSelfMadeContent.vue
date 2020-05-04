@@ -1,6 +1,6 @@
 <template>
     <div class="self-made-content">
-        saa
+        <div class="text-center">準備中</div>
     </div>
 </template>
 

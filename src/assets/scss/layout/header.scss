@@ -54,15 +54,16 @@
             font-size: 14px;
             height: 100%;
             text-align: center;
+            position: relative;
             &:hover {
                 color: #696969;
                 padding-bottom: 2px;
                 border-bottom: 2px #ccc solid;
             }
             span {
-                position: relative;
+                position: absolute;
                 top: 40%;
-                transform: translateY(-40%);
+                transform: translate(-40%);
             }
         }
         &.active {
